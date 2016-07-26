@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
   resources :users, only: [:new,:create,:show]
+  resources :items
 
-  resources :categories, :path => "/", :only => [:index, :show] do
-      resources :items, :path => "/", :only => [:index, :show, :new] do
-    end
-end
+
+get '/:name', to: "categories#show", as: :category
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
