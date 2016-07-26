@@ -23,11 +23,10 @@ class ItemsController < ApplicationController
     @items= Item.all
   end
 
+  private
 
-private
+  def item_params
+    params.require(:item).permit(:name,:price,:img,:categories_id)
+  end
 
-def item_params
-  params.require(:item).permit(:name,:price,:img,:categories_id)
-
-end
 end
