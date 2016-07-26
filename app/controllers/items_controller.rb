@@ -15,7 +15,9 @@ class ItemsController < ApplicationController
     end
   end
 
-
+  def show
+    @item= Item.new 
+  end
 
   def index
     @items= Items.all
@@ -25,6 +27,7 @@ class ItemsController < ApplicationController
 private
 
 def item_params
+  params.require(:item).permit(:name,:price,:img,:categories_id)
 
 end
 end
