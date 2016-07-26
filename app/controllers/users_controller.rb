@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # helper_method :is_admin?
 
   def show
     @user= User.find(params[:id])
@@ -27,7 +26,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:username,:password,:role)
+    params.require(:user).permit(:username,:password, :address,:email)
   end
 
 end

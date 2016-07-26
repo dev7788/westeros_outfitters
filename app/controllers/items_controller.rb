@@ -16,11 +16,11 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item= Item.new 
+    @item= Item.new
   end
 
   def index
-    @items= Items.all
+    @items= Item.all
   end
 
 
