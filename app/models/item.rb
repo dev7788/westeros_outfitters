@@ -1,2 +1,5 @@
 class Item < ActiveRecord::Base
-end
+  belong_to :categories
+  has_many :order_items, dependent: :destroy
+  has_many :orders, through: :order_items
+end 
