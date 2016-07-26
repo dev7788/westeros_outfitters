@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+<%= flash.now[:error] %>
+<%= flash[:notice] %>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+<br></br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br></br>
+  <%= f.submit "Login" %>
+<% end %>
+<br></br>
+
+
+<%= link_to("Create Account", new_user_path) %>

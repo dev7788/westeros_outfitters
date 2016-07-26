@@ -1,9 +1,8 @@
 <h3>Hello, <%=@user.username%>.</h3>
 </div>
 
-<h3><%= @user.email %></h3>
+<p><%= @user.email %></p>
 <h3><%= @user.address %></h3>
 
-<strong><%= link_to "See All Users", admin_users_path if current_user.admin? %></strong>
 <br></br>
 <strong><%= link_to "Logout", logout_path, method: :delete %></strong>
