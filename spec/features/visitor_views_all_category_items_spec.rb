@@ -12,7 +12,6 @@ RSpec.feature 'Visitor views all items in category' do
     end
 
     visit category_path(category)
-
     expect(page).to have_content('Sword')
     expect(page).to have_content('Shield')
     expect(page).to have_content('Bow')

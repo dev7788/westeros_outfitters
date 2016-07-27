@@ -13,7 +13,7 @@
   <% end %>
 </p>
   <p>
-    Cart: <%= @cart.total %>
+    Cart: <%= @cart.count_of(@cart.contents) %>
   </p>
 
 <%= yield %>
