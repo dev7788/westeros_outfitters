@@ -9,5 +9,8 @@ $<%= item.price %>
 quantity: <%=@cart.contents[item.id.to_s]%>
 <br></br>
 <br></br>
-
 <%end  %>
+<br></br>
+<%= link_to "Past Orders",orders_path %>
+<br></br>
+<%= link_to "Checkout", orders_path, method: :post %>
