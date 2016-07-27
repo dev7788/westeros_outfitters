@@ -7,15 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p>
-  <% flash.each do |type, message| %>
-  <%= content_tag :div, message, class: "flash_#{type}" %>
-  <% end %>
-</p>
-  <p>
-    Cart: <%= @cart.count_of(@cart.contents) %>
-  </p>
   <%= render 'layouts/navbar' %>
+  <p>
+    <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: "flash_#{type}" %>
+    <% end %>
+  </p>
 <%= yield %>
 
 </body>
