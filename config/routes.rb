@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new,:create]
   resources :items
+  resources :orders, except: [:new]
 
   get '/dashboard' => "users#show", as: "user"
   get '/login', to: 'sessions#new'

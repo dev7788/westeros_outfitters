@@ -2,9 +2,14 @@
 <h1>Your Cart</h1>
 <% @items.each do |item| %>
   <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /></br>
-  <%= item.name %> $<%= item.price %>        quantity: <%= @cart.contents[item.id.to_s] %>
+  <%= item.name %> $<%= item.price %>
+  quantity: <%= @cart.contents[item.id.to_s] %>
   <br>
   <%= item.description %>
   <br>
 <% end %>
 <p>Total: $<%= @cart.total %></p>
+<br>
+<%= link_to "Past Orders",orders_path %>
+<br>
+<%= link_to "Checkout", orders_path, method: :post %>
