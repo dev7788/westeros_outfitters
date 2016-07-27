@@ -1,13 +1,10 @@
 
 <h1>Your Cart</h1>
-<p>Amount: $ <%= @cart.total %></p>
-<%@items.each do |item| %>
-<%= item.name %>
-<br></br>
-$<%= item.price %>
-<br></br>
-quantity: <%=@cart.contents[item.id.to_s]%>
-<br></br>
-<br></br>
-
-<%end  %>
+<% @items.each do |item| %>
+  <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /></br>
+  <%= item.name %> $<%= item.price %>        quantity: <%= @cart.contents[item.id.to_s] %>
+  <br>
+  <%= item.description %>
+  <br>
+<% end %>
+<p>Total: $<%= @cart.total %></p>
