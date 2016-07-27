@@ -12,11 +12,11 @@ class UsersController < ApplicationController
   def create
     @user= User.new(user_params)
     if @user.save
-      flash[:notice]= "Success"
+      flash[:notice]= 'Account successfully created!'
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      flash[:error]= "Those are not valid inputs"
+      flash[:error]= 'Those are not valid inputs.'
       render :new
     end
   end
