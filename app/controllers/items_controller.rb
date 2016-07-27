@@ -7,10 +7,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      flash[:notice] = "Item Created"
+      flash[:notice] = 'Item Created'
       redirect_to items_path
     else
-      flash[:error] = "Those are not valid inputs"
+      flash[:error] = 'Those are not valid inputs'
       render :new
     end
   end
