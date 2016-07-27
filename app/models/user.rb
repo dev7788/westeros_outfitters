@@ -1,17 +1,11 @@
-require 'bcrypt'
-
-
 class User < ActiveRecord::Base
+  has_secure_password
 
-has_many :orders
+  has_many :orders
 
-validates :username, presence: true,
-                   uniqueness: true
-validates :password, presence: true
+  validates :username, presence: true,
+                     uniqueness: true
 
-has_secure_password
-
-enum role: ["default", "admin"]
-
-
+  validates :password, presence: true
+  enum role: ["default", "admin"]
 end

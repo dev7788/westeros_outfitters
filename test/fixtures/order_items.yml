@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  orders_id: 
-  items_id: 
-
-two:
-  orders_id: 
-  items_id: 
