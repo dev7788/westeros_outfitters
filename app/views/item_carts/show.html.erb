@@ -1,0 +1,13 @@
+
+<h1>Your Cart</h1>
+<p>Amount: $ <%= @cart.total %></p>
+<%@items.each do |item| %>
+<%= item.name %>
+<br></br>
+$<%= item.price %>
+<br></br>
+quantity: <%=@cart.contents[item.id.to_s]%>
+<br></br>
+<br></br>
+
+<%end  %>
