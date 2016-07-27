@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   has_many :orders
 
   validates :username, presence: true,
-                     uniqueness: true
+                       uniqueness: true
 
   validates :password, presence: true
-  enum role: ["default", "admin"]
+  enum role: %w(default admin)
 end
