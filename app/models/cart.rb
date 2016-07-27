@@ -28,6 +28,11 @@ class Cart
     prices.reduce(0,:+)
   end
 
+  def count_of(items)
+    items.values.sum
+  end
+
+
 
 
 end
