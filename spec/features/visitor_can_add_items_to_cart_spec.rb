@@ -8,9 +8,11 @@ RSpec.feature "Visitor can add items to cart" do
 
     expect(page).to have_content("Cart: 0")
 
+
     click_on "Add to Cart"
 
     expect(page).to have_content("Ice has been added to your cart!")
-    expect(page).to have_content("Cart: 0.99")
+    expect(page).to have_content("Cart: 1")
+
   end
 end
