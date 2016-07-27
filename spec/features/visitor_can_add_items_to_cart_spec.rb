@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.feature "Visitor can add items to cart" do
   scenario "they click on add to cart button" do
-    ice = Item.create(name: "Ice", img: "image", price: 0.99)
-
-    visit items_path
+    category = Category.create(name: "weapons")
+    category.items.create(name: "Ice", img: "image", price: 0.99)
+    visit category_path(category)
 
     expect(page).to have_content("Cart: 0")
 
     click_on "Add to Cart"
 
-    expect(page).to have_content("Ice was added to cart")
-    expect(page).to have_content("Cart: 1")
+    expect(page).to have_content("Ice has been added to your cart!")
+    expect(page).to have_content("Cart: 0.99")
   end
 end
