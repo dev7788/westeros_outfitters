@@ -1,4 +1,7 @@
-<%= @name %>
+<h1><%= @name %></h1>
 
-
-<%= @items.first.name %>
+<% @items.each do |item| %>
+  <%= item.img %><br>
+  <%= item.name %><br>
+  <%= item.price %><br>
+<% end %>
