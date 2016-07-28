@@ -22,16 +22,44 @@ RSpec.describe Cart, type: :model do
     expect(cart.contents).to eq({ '1' => 3, '2' => 1 })
   end
 
+  it 'should be able to subtract an item from cart' do
+    cart = Cart.new({ '1' => 3, '2' => 5 })
+
+    cart.subtract_item(1)
+    cart.subtract_item(2)
+
+    expect(cart.contents).to eq({ '1' => 2, '2' => 4 })
+  end
+
+  it 'should return the total cost of items in cart' do
+    item1 = Item.create!(name: "Iron Throne", description: "Would hurt to sit on", price: 20.00)
+    item2 = Item.create!(name: "Dire Wolf", description: "This wolf is in dire need of an owner", price: 10.00)
+    item3 = Item.create!(name: "Moon Door", description: "A long fall comes before a long winter", price: 5.00)
+
+    cart = Cart.new({ item1 => 2, item2 => 1, item3 => 2 })
+
+    expect(cart.total).to eq(60.00)
+  end
+
   it 'should return the total number of items in cart' do
     cart = Cart.new({ '1' => 3, '2' => 1, '3' => 2 })
 
-    expect(cart.total).to eq(6)
+    expect(cart.count_of(cart.contents)).to eq(6)
   end
 
   it 'should return the number of a specific item' do
-    cart = Cart.new({ '1' => 2 })
+    item = Item.create!(name: "Iron Throne", description: "Would hurt to sit on", price: 200.00)
+    cart = Cart.new({ item => 3 })
 
-    expect(cart.count_of(1)).to eq(2)
+    expect(cart.quantity(item)).to eq(3)
+  end
+
+  it 'should be able to remove an item from cart' do
+    cart = Cart.new({ '1' => 3, '2' => 1, '3' => 2 })
+
+    cart.remove_item(1)
+
+    expect(cart.contents).to eq({ '2' => 1, '3' => 2 })
   end
 
 end
