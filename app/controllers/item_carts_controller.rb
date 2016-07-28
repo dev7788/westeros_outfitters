@@ -30,8 +30,8 @@ class ItemCartsController < ApplicationController
     @item = Item.find(params[:format])
     @cart.remove_item(@item.id)
     flash[:item_removed] = "Successfully removed " \
-                          "#{view_context.link_to @item.name, item_path(@item)}" \
-                          " from your cart."
+                           "#{view_context.link_to @item.name, item_path(@item)}" \
+                           " from your cart."
     redirect_to cart_path
   end
 end

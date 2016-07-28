@@ -10,7 +10,5 @@ class User < ActiveRecord::Base
   enum role: %w(default admin)
 
   def to_param
-
   end
-
 end
