@@ -3,7 +3,9 @@
 <% @items.each do |item| %>
   <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /></br>
   <%= item.name %> $<%= item.price %>
-  quantity: <%= @cart.contents[item.id.to_s] %>
+  Quantity: <%= @cart.quantity(item) %>
+  <%= button_to '+', increment_path(id: item.id), method: :put, class: "button btn" %>
+  <%= button_to '-', decrement_path(id: item.id), method: :put, class: "button btn" %>
   <br>
   <%= item.description %>
   <br>
