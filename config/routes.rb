@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new,:create]
   resources :items
   resources :orders, except: [:new]
+  resources :categories, only: [:index]
 
   get '/dashboard' => "users#show", as: "user"
   get '/login', to: 'sessions#new'
