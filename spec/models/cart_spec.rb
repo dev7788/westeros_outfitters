@@ -32,11 +32,11 @@ RSpec.describe Cart, type: :model do
   end
 
   it 'should return the total cost of items in cart' do
-    item1 = Item.create!(name: "Iron Throne", description: "Would hurt to sit on", price: 20.00)
-    item2 = Item.create!(name: "Dire Wolf", description: "This wolf is in dire need of an owner", price: 10.00)
-    item3 = Item.create!(name: "Moon Door", description: "A long fall comes before a long winter", price: 5.00)
+    Item.create!(name: 'Iron Throne', description: 'Would hurt to sit on', price: 20.00, img: 'image_url')
+    Item.create!(name: 'Dire Wolf', description: 'This wolf is in dire need of an owner', price: 10.00, img: 'image_url1')
+    Item.create!(name: 'Moon Door', description: 'A long fall comes before a long winter', price: 5.00, img: 'image_url2')
 
-    cart = Cart.new({ item1 => 2, item2 => 1, item3 => 2 })
+    cart = Cart.new({ '1' => 2, '2' => 1, '3' => 2 })
 
     expect(cart.total).to eq(60.00)
   end
@@ -48,8 +48,9 @@ RSpec.describe Cart, type: :model do
   end
 
   it 'should return the number of a specific item' do
-    item = Item.create!(name: "Iron Throne", description: "Would hurt to sit on", price: 200.00)
-    cart = Cart.new({ item => 3 })
+    item = Item.create!(name: 'Steel Throne', description: 'Hurt to sit on', price: 200.00, img: 'image_url3')
+
+    cart = Cart.new({ '4' => 3 })
 
     expect(cart.quantity(item)).to eq(3)
   end
