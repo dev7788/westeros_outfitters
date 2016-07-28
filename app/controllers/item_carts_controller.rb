@@ -14,5 +14,8 @@ class ItemCartsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    @cart.add_item(@item.id)
+    session[:cart] = @cart.contents
+    redirect_to cart_path
   end
 end
