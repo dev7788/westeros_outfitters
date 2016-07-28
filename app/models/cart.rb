@@ -23,9 +23,7 @@ class Cart
   def total
     prices=[]
     items.each do |item|
-      item = Item.find(item)
-      quantity = contents[item.id.to_s]
-      prices << item.price * quantity.to_i
+      prices << item_total(item)
     end
     prices.reduce(0,:+)
   end
@@ -38,6 +36,10 @@ class Cart
     contents[item.id.to_s]
   end
 
+  def item_total(item)
+    item.price * quantity(item).to_i
+
+  end
   def remove_item(item_id)
     contents.delete(item_id.to_s)
   end
