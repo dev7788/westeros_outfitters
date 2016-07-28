@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   delete '/cart', to: 'item_carts#destroy'
 
   get "/:name" => "categories#show", as: "category"
+
+  namespace :admin do
+    get '/dashboard' => "users#show", as: "user"
+end
 end
