@@ -8,6 +8,7 @@
   <%= button_to '-', decrement_path(id: item.id), method: :put, class: "button btn" %>
   <br>
   <%= item.description %>
+  Item Total: <%= @cart.item_total(item) %>
   <br>
   <%= button_to "Remove", cart_path(item), method: :delete %><br><br>
 <% end %>
