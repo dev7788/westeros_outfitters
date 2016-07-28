@@ -1,8 +1,8 @@
 <h2>All Items</h2>
 <div class="thumbnail">
-<a href="/weapons">Weapons</a>
-<a href="/unique-items">| Unique Items</a>
-<a href="/armor">| Armor</a>
+<%@categories.each do |category| %>
+<a href="/<%=category.name%>"><%= category.name.capitalize%>|</a>
+<%end %>
 </div>
 
 
