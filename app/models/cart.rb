@@ -15,8 +15,8 @@ class Cart
   end
 
   def items
-    contents.map do |item, count|
-      Item.find(item.id)
+    contents.map do |item_id, count|
+      Item.find(item_id)
     end
   end
 
@@ -37,7 +37,7 @@ class Cart
   end
 
   def quantity(item)
-    contents[item]
+    contents[item.id.to_s]
   end
 
   def remove_item(item_id)
