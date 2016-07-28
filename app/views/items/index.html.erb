@@ -17,7 +17,8 @@
         $<%= item.price %>
         <br>
         <%= item.description%>
-        <p><%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn"%></p>
+        <h4><strong><%=link_to "Item Retired",item_path(item.id) if item.retired%></strong></h4>
+        <p><%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn" unless item.retired%></p>
       </li>
     </ul>
   </div>
