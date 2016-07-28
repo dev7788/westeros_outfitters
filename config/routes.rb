@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'homes#show'
 
   resources :users, only: [:new,:create]
-  resources :items
+  resources :items, except: [:new,:create]
   resources :orders, except: [:new]
   resources :categories, only: [:index]
 

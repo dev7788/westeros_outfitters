@@ -1,17 +1,15 @@
 class ItemsController < ApplicationController
 
   def index
+    @categories= Category.all
     @items = Item.all
   end
 
-  def new
-    @category = Category.find(params[:category_id])
-    @item = @category.items.new
-  end
 
   def show
     @item = Item.find(params[:id])
   end
+
 
   def create
     @item = Item.new(item_params)
@@ -29,4 +27,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :price, :img, :description)
   end
+
 end
