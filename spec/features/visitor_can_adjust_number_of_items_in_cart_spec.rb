@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'visitor can adjust number of items in cart' do
   scenario 'visitor can add another of a previously added item to their cart' do
-    category = Category.create(name: 'weapons')
-    category.items.create(name: 'Ice', img: 'image', price: 0.99, description: "it's cold")
+    category = Category.create!(name: 'weapons')
+    category.items.create!(name: 'Ice', img: 'image', price: 0.99, description: "it's cold")
 
     visit items_path
 
