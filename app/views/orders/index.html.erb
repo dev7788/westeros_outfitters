@@ -1,8 +1,8 @@
 <% @orders.each do |order| %>
-<h3>Order Number:<%= order.id %></h3>
-<br></br>
-<%= order.created_at %>
-<br></br>
-<p>$<%= order.amount %></p>
-<br></br>
+  <h3>Order Number:<%= order.id %></h3>
+  <br>
+  <%= order.created_at %>
+  <br>
+  <p>$<%= order.amount %></p>
+  <br>
 <%end %>

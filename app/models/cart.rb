@@ -21,11 +21,11 @@ class Cart
   end
 
   def total
-    prices=[]
+    prices = []
     items.each do |item|
       prices << item_total(item)
     end
-    prices.reduce(0,:+)
+    prices.reduce(0, :+)
   end
 
   def count_of(items)

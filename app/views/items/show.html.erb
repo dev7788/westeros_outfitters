@@ -1,5 +1,7 @@
 <h3><%= @item.name%></h3><br>
-<img src='<%= @item.img %>' style="max-height: 450px; max-width: 600px;" /></br>
+<img src='<%= @item.img %>' style="max-height: 450px; max-width: 600px;" /><br>
 $<%= @item.price%><br>
-<%= @item.description %>
-<p><%= button_to "Add to Cart", cart_path(id: @item.id), class: "button btn"%></p>
+<p>
+  <%= @item.description %>
+</p>
+<p><%= button_to "Add to Cart", cart_path(id: @item.id), class: "button btn"%><p>
