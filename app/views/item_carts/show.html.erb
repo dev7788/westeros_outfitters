@@ -1,7 +1,7 @@
 
 <h1>Your Cart</h1>
 <% @items.each do |item| %>
-  <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /></br>
+  <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
   <%= item.name %> $<%= item.price %>
   Quantity: <%= @cart.quantity(item) %>
   <%= button_to '+', increment_path(id: item.id), method: :put, class: "button btn" %>
@@ -14,11 +14,10 @@
 <% end %>
 <p>Total: $<%= @cart.total %></p>
 <br>
-
 <% if current_user %>
   <%= link_to "Past Orders",orders_path %>
   <br>
   <%= link_to "Checkout", orders_path, method: :post %>
 <% else %>
   <%= link_to "Login", login_path %> or <%= link_to "Create Account", new_user_path %> to Checkout.
-  <% end %>
+<% end %>
