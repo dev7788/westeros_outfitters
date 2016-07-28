@@ -11,13 +11,13 @@ class Cart
   end
 
   def subtract_item(item)
-      contents[item.to_s] -= 1 if contents[item.to_s] > 0
+    contents[item.to_s] -= 1 if contents[item.to_s] > 0
   end
 
   def items
-    contents.map do |item_id,quantity|
-     Item.find(item_id)
-   end
+    contents.map do |item_id, quantity|
+      Item.find(item_id)
+    end
   end
 
   def total
@@ -38,8 +38,8 @@ class Cart
 
   def item_total(item)
     item.price * quantity(item).to_i
-
   end
+
   def remove_item(item_id)
     contents.delete(item_id.to_s)
   end
