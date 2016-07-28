@@ -21,8 +21,8 @@ class Cart
   def total
     prices=[]
     items.each do |item|
-      item= Item.find(item)
-      quantity= contents[item.id.to_s]
+      item = Item.find(item)
+      quantity = contents[item.id.to_s]
       prices << item.price * quantity.to_i
     end
     prices.reduce(0,:+)
@@ -32,6 +32,9 @@ class Cart
     items.values.sum
   end
 
+  def quantity(item)
+    contents[item.id.to_s]
+  end
 
 
 
