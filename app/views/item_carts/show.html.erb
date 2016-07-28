@@ -2,7 +2,7 @@
 <h1>Your Cart</h1>
 <% @items.each do |item| %>
   <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
-  <%= item.name %> $<%= item.price %>
+  <%= item.name %> <%= number_to_currency(item.price) %>
   Quantity: <%= @cart.quantity(item) %>
   <%= button_to '+', increment_path(id: item.id), method: :put, class: "button btn" %>
   <%= button_to '-', decrement_path(id: item.id), method: :put, class: "button btn" %>
@@ -12,7 +12,7 @@
   <br>
   <%= button_to "Remove", cart_path(item), method: :delete %><br><br>
 <% end %>
-<p>Total: $<%= @cart.total %></p>
+<p>Total: <%= number_to_currency(@cart.total) %></p>
 <br>
 <% if current_user %>
   <%= link_to "Past Orders",orders_path %>
