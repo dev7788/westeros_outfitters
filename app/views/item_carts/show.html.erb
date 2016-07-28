@@ -10,6 +10,11 @@
 <% end %>
 <p>Total: $<%= @cart.total %></p>
 <br>
-<%= link_to "Past Orders",orders_path %>
-<br>
-<%= link_to "Checkout", orders_path, method: :post %>
+
+<% if current_user %>
+  <%= link_to "Past Orders",orders_path %>
+  <br>
+  <%= link_to "Checkout", orders_path, method: :post %>
+<% else %>
+  <%= link_to "Login", login_path %> or <%= link_to "Create Account", new_user_path %> to Checkout.
+  <% end %>
