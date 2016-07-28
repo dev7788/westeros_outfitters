@@ -1,5 +1,3 @@
-require 'pry'
-
 class Cart
   attr_reader :contents
 
@@ -30,6 +28,10 @@ class Cart
 
   def count_of(items)
     items.values.sum
+  end
+
+  def remove_item(item_id)
+    contents.delete(item_id.to_s)
   end
 
 

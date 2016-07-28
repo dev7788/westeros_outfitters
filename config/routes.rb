@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   post '/cart', to: 'item_carts#create'
   get '/cart', to: 'item_carts#show'
+  delete '/cart', to: 'item_carts#destroy'
 
   get "/:name" => "categories#show", as: "category"
 end

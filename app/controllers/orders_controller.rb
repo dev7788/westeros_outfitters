@@ -1,5 +1,3 @@
-require 'pry'
-
 class OrdersController < ApplicationController
   before_filter :current_user
 
