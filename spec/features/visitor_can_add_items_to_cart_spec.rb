@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Visitor can add items to cart' do
   scenario 'they click on add to cart and view the cart path' do
-    category = Category.create(name: 'weapons')
-    category.items.create(name: 'Ice', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg', price: 0.99, description: "it's cold")
+    category = Category.create!(name: 'weapons')
+    category.items.create!(name: 'Ice', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg', price: 0.99, description: "it's cold")
     visit category_path(category)
 
     expect(page).to have_content('View Cart (0 Items)')
