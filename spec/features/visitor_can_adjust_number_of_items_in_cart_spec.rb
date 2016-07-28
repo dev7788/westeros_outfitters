@@ -21,7 +21,6 @@ RSpec.feature 'visitor can adjust number of items in cart' do
     expect(page).to have_content('Quantity: 2')
     expect(page).to have_content('$1.98')
     expect(page).to have_content('Total: $1.98')
-
     click_button('-')
 
     expect(current_path).to eq(cart_path)

@@ -4,7 +4,8 @@
   <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /></br>
   <%= item.name %> $<%= item.price %>
   Quantity: <%= @cart.quantity(item) %>
-  <%= button_to '+', cart_path(id: item.id), method: :put, class: "button btn" %>
+  <%= button_to '+', increment_path(id: item.id), method: :put, class: "button btn" %>
+  <%= button_to '-', decrement_path(id: item.id), method: :put, class: "button btn" %>
   <br>
   <%= item.description %>
   <br>

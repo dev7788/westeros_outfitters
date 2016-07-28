@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   post '/cart', to: 'item_carts#create'
   get '/cart', to: 'item_carts#show'
-  put '/cart', to: 'item_carts#update'
+  put '/cart/dec', to: 'item_carts#decrement', as: 'decrement'
+  put '/cart/inc', to: 'item_carts#increment', as: 'increment'
 
   get "/:name" => "categories#show", as: "category"
 end

@@ -12,6 +12,10 @@ class Cart
     contents[item.to_s] += 1
   end
 
+  def subtract_item(item)
+      contents[item.to_s] -= 1 if contents[item.to_s] > 0
+  end
+
   def items
     contents.map do |item_id,quantity|
      Item.find(item_id)

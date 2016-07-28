@@ -12,9 +12,16 @@ class ItemCartsController < ApplicationController
     @items = @cart.items
   end
 
-  def update
+  def increment
     @item = Item.find(params[:id])
     @cart.add_item(@item.id)
+    session[:cart] = @cart.contents
+    redirect_to cart_path
+  end
+
+  def decrement
+    @item = Item.find(params[:id])
+    @cart.subtract_item(@item.id)
     session[:cart] = @cart.contents
     redirect_to cart_path
   end
