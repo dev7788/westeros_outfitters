@@ -3,6 +3,6 @@
   <br>
   <%= order.created_at %>
   <br>
-  <p>$<%= order.amount %></p>
+  <p><%= number_to_currency(order.amount) %></p>
   <br>
 <%end %>
