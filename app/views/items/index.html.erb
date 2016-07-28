@@ -1,7 +1,24 @@
+<h2>All Items</h2>
+<div class="thumbnail">
+<a href="/weapons">Weapons</a>
+<a href="/unique-items">| Unique Items</a>
+<a href="/armor">| Armor</a>
+</div>
+
+
 <p>
 <%@items.each do |item| %>
-<%= item.name%>
-$<%= item.price %>
+    <div class="caption bottom-align">
+      <ul class="rig columns-3">
+        <li>
+      <img class ="index-image" src="<%=item.img%>" alt="...">
+      <strong><%= item.name%></strong>
+      <br></br>
+      $<%= item.price %>
+      <br></br>
+      <%= item.description%>
 <p><%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn"%></p>
+</li>
+</ul>
 <%end %>
 </p>

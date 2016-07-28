@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
   def to_param
 
   end
+
 end
