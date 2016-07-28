@@ -3,8 +3,8 @@ require 'spec_helper'
 RSpec.feature 'visitor must login or create account to be able to checkout' do
   scenario 'visitor creates account after putting items in cart' do
 
-    category = Category.create(name: 'weapons')
-    category.items.create(name: 'Ice', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg', price: 0.99, description: "it's cold")
+    category = Category.create!(name: 'weapons')
+    category.items.create!(name: 'Ice', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg', price: 0.99, description: "it's cold")
     visit category_path(category)
 
     click_on 'Add to Cart'

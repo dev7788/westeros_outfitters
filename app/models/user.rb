@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
                        uniqueness: true
 
   validates :password, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :address, presence: true
+  validates :role, presence: true
   enum role: %w(default admin)
 
   def to_param

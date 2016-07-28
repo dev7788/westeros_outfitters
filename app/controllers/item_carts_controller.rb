@@ -1,5 +1,5 @@
 class ItemCartsController < ApplicationController
-  before_action :set_item, only: [:create,:increment,:decrement]
+  before_action :set_item, only: [:create, :increment, :decrement]
 
   def set_item
     @item = Item.find(params[:id])
@@ -18,13 +18,11 @@ class ItemCartsController < ApplicationController
 
   def increment
     @cart.add_item(@item.id)
-    session[:cart] = @cart.contents
     redirect_to cart_path
   end
 
   def decrement
     @cart.subtract_item(@item.id)
-    session[:cart] = @cart.contents
     redirect_to cart_path
   end
 
