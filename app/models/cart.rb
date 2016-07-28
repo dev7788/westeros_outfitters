@@ -1,5 +1,3 @@
-require 'pry'
-
 class Cart
   attr_reader :contents
 
@@ -40,6 +38,7 @@ class Cart
     contents[item.id.to_s]
   end
 
-
-
+  def remove_item(item_id)
+    contents.delete(item_id.to_s)
+  end
 end
