@@ -1,8 +1,9 @@
 
- <h1>Your Cart</h1>
-<div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-md-4 col-lg-3 skill-container">
+
+<div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-md-4 col-lg-3 skill-container text-center">
   <div class="thumbnail">
     <div class="caption bottom-align">
+      <h1>Your Cart</h1>
       <% @items.each do |item| %>
         <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
         <%= item.name %> <%= number_to_currency(item.price) %>
@@ -14,15 +15,14 @@
         <br></br>
         <%= button_to "Remove", cart_path(item), method: :delete %><br><br>
       <% end %>
+      <p>Total: <%= number_to_currency(@cart.total) %></p>
+      <% if current_user %>
+        <%= link_to "Checkout", orders_path, method: :post unless @items.count==0 %>
+        <br></br>
+        <%= link_to "Past Orders", orders_path %>
+      <% else %>
+        <%= link_to "Login", login_path %> or <%= link_to "Create Account", new_user_path %> to Checkout.
+      <% end %>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-<p>Total: <%= number_to_currency(@cart.total) %></p>
-<br>
-<% if current_user %>
-  <%= link_to "Past Orders", orders_path %>
-  <br>
-  <%= link_to "Checkout", orders_path, method: :post unless @items.count==0 %>
-<% else %>
-  <%= link_to "Login", login_path %> or <%= link_to "Create Account", new_user_path %> to Checkout.
-<% end %>
