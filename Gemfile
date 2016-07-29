@@ -27,6 +27,8 @@ gem 'bootstrap-sass'
 
 group :test do
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 # Use ActiveModel has_secure_password
@@ -42,10 +44,8 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
-  gem 'shoulda-matchers'
 end
 
 group :development do
