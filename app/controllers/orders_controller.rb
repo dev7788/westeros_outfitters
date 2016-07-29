@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
-    require "pry"; binding.pry
   end
 
   # def new
@@ -16,7 +15,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_user.orders.create(amount: @cart.total)
-    @order.items = @cart.items
+    @order.add_order_items(@cart)
     redirect_to @order
     session[:cart] = {}
   end

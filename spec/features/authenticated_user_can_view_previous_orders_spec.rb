@@ -24,6 +24,7 @@ RSpec.feature 'authenticated user can view previous orders' do
   # And when I click that link
     click_on ("Order Number: 1")
   # Then I should see each item that was order with the quantity and line-item subtotals
+  save_and_open_page
     expect(page).to have_content ('Ice')
     expect(page).to have_css ('img[src="http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg"]')
     expect(page).to have_content ('$0.99')

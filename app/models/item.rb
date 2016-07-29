@@ -7,4 +7,14 @@ class Item < ActiveRecord::Base
   validates :img, presence:true, uniqueness: true
   validates :price, presence:true
   validates :description, presence:true
+
+  def quantity(order_id)
+    order_item = self.order_items.find_by(order_id: order_id)
+    order_item.quantity
+  end
+
+  def subtotal(order_id)
+    order_item = self.order_items.find_by(order_id: order_id)
+    order_item.subtotal
+  end
 end

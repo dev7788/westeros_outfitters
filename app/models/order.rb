@@ -5,4 +5,11 @@ class Order < ActiveRecord::Base
 
   validates :amount, presence: true
   validates :user_id, presence: true
+
+  def add_order_items(cart)
+    cart.contents.each do |item_id, qty, item_total|
+      item = Item.find(item_id)
+      self.order_items.create(item_id: item_id, quantity: qty, subtotal: item.price * qty)
+    end
+  end
 end
