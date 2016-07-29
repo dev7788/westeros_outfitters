@@ -29,6 +29,7 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'mocha'
 end
 
 # Use ActiveModel has_secure_password

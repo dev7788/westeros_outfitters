@@ -1,5 +1,5 @@
 <% @orders.each do |order| %>
-  <h3>Order Number: <%= order.id %></h3>
+  <h3><%= link_to "Order Number: #{order.id}", order_path(order) %></h3>
   <p>Created At: <%= order.created_at %></p><br>
   <p>Order Total: <%= number_to_currency(order.amount) %></p>
   <br>

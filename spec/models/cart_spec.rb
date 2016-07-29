@@ -51,7 +51,7 @@ RSpec.describe Cart, type: :model do
     item = Item.create!(name: 'Steel Throne', description: 'Hurt to sit on', price: 200.00, img: 'image_url3')
 
     cart = Cart.new({ '4' => 3 })
-
+    require "pry"; binding.pry
     expect(cart.quantity(item)).to eq(3)
   end
 

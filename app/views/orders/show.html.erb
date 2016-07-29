@@ -1,6 +1,15 @@
-<h3>Order ID: <%= @order.id %></h3>
+<h3>Order Number: <%= @order.id %></h3>
 <br>
 Amount: <%= @order.amount %>
 <br>
 Placed on: <%= @order.created_at %>
 <br>
+<% @order.items.each do |item| %>
+  <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
+  <%= item.name %> <%= number_to_currency(item.price) %>
+  Quantity: <%= @order.order_items.quantity(item) %>
+  <br>
+  <%= item.description %>
+  <br>
+  Item Total: <%= @order.order_items.item_total(item) %>
+<% end %>
