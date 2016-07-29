@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   # end
 
   def create
-    @order = current_user.orders.create(amount: @cart.total)
+    @order = current_user.orders.create(amount: @cart.total, status: 0)
     @order.add_order_items(@cart)
     redirect_to @order
     session[:cart] = {}

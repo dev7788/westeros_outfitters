@@ -9,12 +9,14 @@ class Item < ActiveRecord::Base
   validates :description, presence:true
 
   def quantity(order_id)
-    order_item = self.order_items.find_by(order_id: order_id)
-    order_item.quantity
+    find_order_items(order_id).quantity
   end
 
   def subtotal(order_id)
-    order_item = self.order_items.find_by(order_id: order_id)
-    order_item.subtotal
+    find_order_items(order_id).subtotal
+  end
+
+  def find_order_items(order_id)
+    self.order_items.find_by(order_id: order_id)
   end
 end

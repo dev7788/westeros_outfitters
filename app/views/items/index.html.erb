@@ -1,8 +1,8 @@
 <h2>All Items</h2>
-<div class="thumbnail">
-<%@categories.each do |category| %>
-<a href="/<%=category.name%>"><%= category.name.capitalize%>|</a>
-<%end %>
+  <div class="thumbnail">
+  <%@categories.each do |category| %>
+    <a href="/<%=category.name%>"><%= category.name.capitalize%>|</a>
+  <%end %>
 </div>
 
 
