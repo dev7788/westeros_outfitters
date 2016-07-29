@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728204737) do
+ActiveRecord::Schema.define(version: 20160729205952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20160728204737) do
     t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
+    t.decimal  "subtotal"
   end
 
   add_index "order_items", ["item_id", "order_id"], name: "index_order_items_on_item_id_and_order_id", using: :btree
@@ -47,8 +49,9 @@ ActiveRecord::Schema.define(version: 20160728204737) do
   create_table "orders", force: :cascade do |t|
     t.decimal  "amount"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree

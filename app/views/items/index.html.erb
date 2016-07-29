@@ -1,5 +1,5 @@
 <h2>All Items</h2>
-<div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail">
+<div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail text-center">
 <%@categories.each do |category| %>
 <a href="/<%=category.name%>"><%= category.name.capitalize%>   |</a>
 <%end %>
@@ -7,8 +7,6 @@
 <br></br>
 <br></br>
 <br></br>
-
-
 <p>
 <%@items.each do |item| %>
   <div class="caption bottom-align">

@@ -33,7 +33,7 @@ class Cart
   end
 
   def item_total(item)
-    item.price * quantity(item).to_i
+    item.price * quantity(item)
   end
 
   def quantity(item)
