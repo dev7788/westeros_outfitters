@@ -8,7 +8,7 @@ RSpec.feature 'Visitor views all items in category' do
     category = Category.create!(name: 'weapons')
 
     %w(Sword Shield Bow).map do |item_name|
-      category.items.create!(name: item_name, img: 'https://pbs.twimg.com/profile_images/715136295933255680/5XIOqSKw.jpg', price: 9.99)
+      category.items.create!(name: item_name, img: "#{item_name}image", price: 9.99, description: "this is a description")
     end
 
     visit category_path(category)
