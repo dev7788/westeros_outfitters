@@ -9,12 +9,14 @@ RSpec.feature 'authenticated user can view previous orders' do
     item1 = category.items.create!(name: 'Ice', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg', price: 0.99, description: "it's cold")
     item2 = category.items.create!(name: 'Ice2', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main2.jpg', price: 2.99, description: "it's colder")
     user = User.create!(username: 'ned', password: 'stark', email: 'raven@raven.net', address: 'winterfell')
-    order = user.orders.create!(amount: '$0.99', user_id: '1')
+    order = user.orders.create!(amount: '$3.98', user_id: '1')
+    order.items << item1
+    order.items << item2
   # When I visit "/orders"
     visit orders_path
   # Then I should see my past order
     expect(page).to have_content("ID:")
-    expect(page).to have_content("Amount: $45.54")
+    expect(page).to have_content("Amount: $3.98")
     expect(page).to have_content("Placed on:")
   # And I should see a link to view that order
     expect(page).to have_link(href: order_path(order))
