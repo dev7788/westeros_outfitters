@@ -1,9 +1,12 @@
 <h2>All Items</h2>
-<div class="thumbnail">
+<div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail">
 <%@categories.each do |category| %>
-<a href="/<%=category.name%>"><%= category.name.capitalize%>|</a>
+<a href="/<%=category.name%>"><%= category.name.capitalize%>   |</a>
 <%end %>
 </div>
+<br></br>
+<br></br>
+<br></br>
 
 
 <p>
@@ -13,9 +16,9 @@
       <li>
         <img class ="index-image" src="<%=item.img%>" alt="...">
         <strong><%= item.name%></strong>
-        <br>
+        <br></br>
         <%= number_to_currency(item.price) %>
-        <br>
+        <br></br>
         <%= item.description%>
         <h4><strong><%=link_to "Item Retired",item_path(item.id) if item.retired%></strong></h4>
         <p><%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn" unless item.retired%></p>
