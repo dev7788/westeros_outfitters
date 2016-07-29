@@ -20,7 +20,7 @@
 <p>Total: <%= number_to_currency(@cart.total) %></p>
 <br>
 <% if current_user %>
-  <%= link_to "Past Orders",orders_path %>
+  <%= link_to "Past Orders", orders_path %>
   <br>
   <%= link_to "Checkout", orders_path, method: :post unless @items.count==0 %>
 <% else %>
