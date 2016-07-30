@@ -7,6 +7,11 @@ class Admin::UsersController < Admin::BaseController
 
   def edit
     @user = User.find(params[:id])
+    if current_user == @user
+      render :edit
+    else
+      render file: '/public/404'
+    end
   end
 
 
