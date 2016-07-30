@@ -1,3 +1,4 @@
+<div class="categories-nav">
 <h3><%= @item.name%></h3><br>
 <img src='<%= @item.img %>' style="max-height: 450px; max-width: 600px;" /><br>
 <%= number_to_currency(@item.price) %><br>
@@ -6,3 +7,4 @@
 </p>
 
 <p><%= button_to "Add to Cart", cart_path(id: @item.id), class: "button btn" unless @item.retired%><p>
+</div>

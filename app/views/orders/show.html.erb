@@ -1,3 +1,4 @@
+<div class="categories-nav">
 <h3>Order Number: <%= @order.id %></h3>
 Order Status: <%= @order.status %>
 <% if @order.status == "Completed" %>
@@ -10,6 +11,8 @@ Amount: <%= number_to_currency(@order.amount) %>
 Placed on: <%= @order.created_at %>
 <br>
 <% @order.items.each do |item| %>
+<div class="col-md-4">
+<div class="order">
   <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
   <%= link_to "#{item.name}", item_path(item) %>
   Quantity: <%= item.quantity(@order.id) %>
@@ -17,4 +20,7 @@ Placed on: <%= @order.created_at %>
   <%= item.description %>
   <br>
   Item Total: <%= number_to_currency(item.subtotal(@order.id)) %>
-<% end %>
+</div>
+</div>
+<% end %><br>
+</div>

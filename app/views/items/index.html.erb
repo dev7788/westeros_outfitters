@@ -1,8 +1,10 @@
 <h2>All Items</h2>
+<div class ="categories-nav">
 <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail text-center">
 <%@categories.each do |category| %>
-<a href="/<%=category.name%>"><%= category.name.capitalize%>   |</a>
+<strong><a href="/<%=category.name%>"><%= category.name.capitalize%>   |</a></strong>
 <%end %>
+</div>
 </div>
 <br></br>
 <br></br>
