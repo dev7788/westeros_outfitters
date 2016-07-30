@@ -4,4 +4,6 @@
 <br>
 <p><%= @user.email %></p>
 <h3><%= @user.address %></h3>
+
+<%= link_to "Edit User Profile", admin_edit_user_path(id: @user.id) %>
 </div>
