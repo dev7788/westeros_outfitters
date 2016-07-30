@@ -11,6 +11,8 @@ RSpec.feature 'User who is an admin can see admin dashboard' do
     expect(page).to have_content('Hello, Admin1.')
     expect(current_path).to eq ('/admin/dashboard')
     expect(page).to have_content('Admin Dashboard')
+    expect(page).to have_content('Edit User Profile')
+
   end
 
   scenario 'they cannot access admin/dashboard if they are not an admin' do
