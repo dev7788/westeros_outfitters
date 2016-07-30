@@ -19,9 +19,12 @@ Rails.application.routes.draw do
 
   get "/:name" => "categories#show", as: "category"
 
+
+
   namespace :admin do
       get '/dashboard' => "users#show"
-      get '/dashboard/:id/edit' => "users#edit", as: "edit_user"
-      put '/dashboard' => "users#update"
+      resources :users, only: [:edit, :update]
+      # get '/dashboard/:id/edit' => "users#edit", as: "edit_user"
+      # put '/dashboard' => "users#update"
   end
 end

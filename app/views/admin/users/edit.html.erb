@@ -1,6 +1,6 @@
 <h1>Edit Your Account</h1>
 
-<%= form_for [:admin, @user] do |f| %>
+<%= form_for @user, :url => admin_user_path, :html => {:method => :put} do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
   <br></br>
@@ -12,6 +12,5 @@
   <br></br>
   <%= f.label :email %>
   <%= f.text_field :email%>
-  <%= f.submit "Edit User" %>
-
+  <%= f.submit%>
 <% end %>

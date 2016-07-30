@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def get_dashboard(user)
     if current_admin?
-      redirect_to admin_user_path
+      redirect_to admin_dashboard_path
     else
       redirect_to @user
   end
