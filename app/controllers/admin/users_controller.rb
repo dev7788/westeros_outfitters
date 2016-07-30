@@ -19,7 +19,7 @@ class Admin::UsersController < Admin::BaseController
     if @user.update(user_params)
       redirect_to admin_dashboard_path
     else
-      flash[:error] = "You need to fill out all fields"
+      flash[:error] = 'You need to fill out all fields'
       render :edit
   end
 end
