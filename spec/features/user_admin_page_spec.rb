@@ -13,6 +13,8 @@ RSpec.feature 'User who is an admin can see admin dashboard' do
     expect(current_path).to eq ("/admin/dashboard")
 
     expect(page).to have_content('Admin Dashboard')
+    expect(page).to have_content('Edit User Profile')
+
   end
 
   scenario 'they get redirected to admin/dashbaord after logging in' do
@@ -22,8 +24,7 @@ RSpec.feature 'User who is an admin can see admin dashboard' do
       fill_in "Username", with: "Test"
       fill_in "Password", with: "test"
       click_button "Login"
-      visit admin_user_path
+      visit admin_dashboard_path
       expect(page).to have_content("The page you were looking for doesn't exist.")
-
 end
 end
