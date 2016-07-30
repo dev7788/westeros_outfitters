@@ -79,6 +79,7 @@ ul.rig.columns-2 li {
 /* class for 3 columns */
 ul.rig.columns-3 li {
 	width: 30.83%; /* this value + 2.5 should = 33% */
+  opacity: 0.8;
 }
 /* class for 4 columns */
 ul.rig.columns-4 li {
@@ -109,4 +110,12 @@ ul.rig.columns-4 li {
   max-height:200px;
   width: auto;
   height: auto;
+}
+
+.categories-nav {
+  opacity: 0.7;
+}
+.order{
+  background: white;
+  padding: 10px;
 }
