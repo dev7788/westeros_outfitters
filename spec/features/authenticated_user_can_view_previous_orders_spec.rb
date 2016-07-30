@@ -4,8 +4,8 @@ RSpec.feature 'authenticated user can view previous orders' do
   scenario 'they see their previous orders on the page' do
 
     category = Category.create!(name: 'weapons')
-    item1 = category.items.create!(name: 'Ice', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg', price: 0.99, description: "it's cold")
-    item2 = category.items.create!(name: 'Ice2', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main2.jpg', price: 2.99, description: "it's colder")
+    category.items.create!(name: 'Ice', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg', price: 0.99, description: "it's cold")
+    category.items.create!(name: 'Ice2', img: 'http://www.valyriansteel.com/shop/images/uploads/ice-main2.jpg', price: 2.99, description: "it's colder")
     user = User.create!(username: 'ned', password: 'stark', email: 'raven@raven.net', address: 'winterfell')
     ApplicationController.any_instance.stubs(:current_user).returns(user)
     cart = Cart.new({ '1' => 1, '2' => 2 })
