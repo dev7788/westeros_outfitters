@@ -9,7 +9,6 @@ RSpec.feature 'User who is an admin can see admin dashboard' do
     click_button "Login"
 
     expect(page).to have_content("Hello, Admin1.")
-    save_and_open_page
     expect(current_path).to eq ("/admin/dashboard")
     expect(page).to have_content('Admin Dashboard')
   end
