@@ -6,12 +6,13 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find(params[:id])
+    if current_user.orders.find_by(id: params[:id]).nil?
+      render file: '/public/404'
+    else
+      @order = current_user.orders.find(params[:id])
+      render :show
+    end
   end
-
-  # def new
-  #   @order = Order.new
-  # end
 
   def create
     @order = current_user.orders.create(amount: @cart.total, status: 0)
