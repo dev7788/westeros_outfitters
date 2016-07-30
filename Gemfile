@@ -47,6 +47,7 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-pride'
 end
 
 group :development do
