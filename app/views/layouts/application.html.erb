@@ -9,9 +9,11 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <p class="strong animated shake"><% flash.each do |type, message| %>
+    <p class="strong animated shake">
+      <% flash.each do |type, message| %>
         <%= sanitize(message) %>
-      <% end %></p>
+      <% end %>
+    </p>
     <%= yield %>
   </body>
 </html>

@@ -30,7 +30,7 @@ body {
 }
 
 h2 {
-  color: white;
+  color: #ffffff;
   font-family: Gothic 725 Black;
   font-style: bold;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
@@ -91,8 +91,8 @@ h2 {
 .strong {
   max-width: 50%;
   font-weight: 550;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4)
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .pushdown {
@@ -103,18 +103,13 @@ h2 {
   padding: 0 25px 25px 25px;
 }
 
-ul.rig {
-	list-style: none;
-	font-size: 0px;
-	margin-left: -2.5%; /* should match li left margin */
-}
-ul.rig li {
+.item {
+  list-style: none;
 	display: inline-block;
 	padding: 10px;
 	margin: 0 0 2.5% 2.5%;
 	background: #fff;
 	border: 1px solid #ddd;
-	font-size: 16px;
 	font-size: 1rem;
 	vertical-align: top;
 	box-shadow: 0 0 5px #ddd;
@@ -122,63 +117,57 @@ ul.rig li {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-ul.rig li img {
+
+.transparent {
+  opacity: 0.9;
+}
+
+.item img {
 	max-width: 100%;
 	height: auto;
 	margin: 0 0 10px;
 }
-ul.rig li h3 {
+
+.item h3 {
 	margin: 0 0 5px;
 }
-ul.rig li p {
+
+.item p {
 	font-size: .9em;
 	line-height: 1.5em;
 	color: #999;
 }
-/* class for 2 columns */
-ul.rig.columns-2 li {
-	width: 47.5%; /* this value + 2.5 should = 50% */
-}
-/* class for 3 columns */
-ul.rig.columns-3 li {
-	width: 30.83%; /* this value + 2.5 should = 33% */
-  opacity: 0.8;
-}
-/* class for 4 columns */
-ul.rig.columns-4 li {
-	width: 22.5%; /* this value + 2.5 should = 25% */
-}
 
-@media (max-width: 480px) {
-	ul.grid-nav li {
-		display: block;
-		margin: 0 0 5px;
-	}
-	ul.grid-nav li a {
-		display: block;
-	}
-	ul.rig {
-		margin-left: 0;
-	}
-	ul.rig li {
-		width: 100% !important; /* over-ride all li styles */
-		margin: 0 0 20px;
-	}
+li.item {
+  height: 420px;
 }
-
 
 .index-image {
   display: block;
-  max-width:230px;
-  max-height:200px;
+  max-width: 230px;
+  max-height: 150px;
   width: auto;
   height: auto;
+  float: center;
 }
 
 .categories-nav {
   opacity: 0.8;
 }
-.order{
-  background: white;
+
+.order {
+  background: #ffffff;
   padding: 10px;
+}
+
+.item-description {
+  color: #000000;
+  font-size: 14px;
+  max-height: 30px;
+}
+
+.bottom-right {
+  bottom: 5px;
+  position: absolute;
+  right: 5px;
 }
