@@ -40,6 +40,7 @@ h2 {
   font-style: bold;
 }
 
+
 .animated {
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
@@ -131,9 +132,11 @@ h2 {
 	margin: 0 0 10px;
 }
 
+
 .item h3 {
 	margin: 0 0 5px;
 }
+
 
 .item p {
 	font-size: .9em;
@@ -141,7 +144,7 @@ h2 {
 	color: #999;
 }
 
-li.item {
+li.item{
   height: 420px;
 }
 
@@ -154,6 +157,7 @@ li.item {
   float: center;
 }
 
+
 .categories-nav {
   opacity: 0.8;
 }
@@ -164,6 +168,15 @@ li.item {
 }
 
 .item-description {
+  max-height: 30px;
+  font-size: 14px;
+  font-color: black;
+}
+
+.bottom-right{
+  position:absolute;
+  right:5px;
+  bottom: 5px;
   color: #000000;
   font-size: 14px;
   max-height: 30px;

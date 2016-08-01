@@ -1,31 +1,34 @@
 <div class="categories-nav">
   <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail text-center">
-    <h3>Order Number: <%= @order.id %></h3>
-    Order Status: <%= @order.status %>
-    <% if @order.status == "Completed" %>
-      Order Complete
-      <%= "Submitted at #{@order.updated_at}" %>
-    <% end %>
-    Amount: <%= number_to_currency(@order.amount) %>
+<h3>Order Number: <%= @order.id %></h3>
+Order Status: <%= @order.status %>
+<% if @order.status == "Completed" %>
+  Order Complete
+  <%= "Submitted at #{@order.updated_at}" %>
+<% end %>
+Amount: <%= number_to_currency(@order.amount) %>
+<br></br>
+Placed on: <%= @order.created_at %>
+</div>
+</div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<% @order.items.each do |item| %>
+<div class="categories-nav">
+  <div class="thumbnail text-center">
+    <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
+    <%= link_to "#{item.name}", item_path(item) %>
+    Quantity: <%= item.quantity(@order.id) %>
     <br></br>
-    Placed on: <%= @order.created_at %>
+    <%= item.description %>
+    <br></br>
+    Item Total: <%=number_to_currency(item.subtotal(@order.id)) %>
   </div>
-  <br></br>
-  <br></br>
-  <br></br>
-  <br></br>
-  <% @order.items.each do |item| %>
-    <div class="categories-nav">
-      <div class="thumbnail text-center">
-        <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
-        <%= link_to "#{item.name}", item_path(item) %>
-        Quantity: <%= item.quantity(@order.id) %>
-        <br></br>
-        <%= item.description %>
-        <br></br>
-        Item Total: <%= number_to_currency(item.subtotal(@order.id)) %>
-      </div>
-    </div>
-  <% end %>
-  <br>
+</div>
+<% end %>
+<br>
+</div>
 </div>
