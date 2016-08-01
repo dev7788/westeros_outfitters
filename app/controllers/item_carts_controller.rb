@@ -1,15 +1,11 @@
 class ItemCartsController < ApplicationController
   before_action :set_item, only: [:create, :increment, :decrement]
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
+  before_action :add_item, only: [:create, :increment]
 
   def create
-    @cart.add_item(@item.id)
     session[:cart] = @cart.contents
     flash[:alert] = "#{@item.name} has been added to your cart!"
-    redirect_to items_path
+    redirect_to request.referrer
   end
 
   def show
@@ -17,13 +13,12 @@ class ItemCartsController < ApplicationController
   end
 
   def increment
-    @cart.add_item(@item.id)
-    redirect_to cart_path
+    redirect_to request.referrer
   end
 
   def decrement
     @cart.subtract_item(@item.id)
-    redirect_to cart_path
+    redirect_to request.referrer
   end
 
   def destroy
@@ -32,6 +27,16 @@ class ItemCartsController < ApplicationController
     flash[:item_removed] = "Successfully removed " \
                            "#{view_context.link_to @item.name, item_path(@item)}" \
                            " from your cart."
-    redirect_to cart_path
+    redirect_to request.referrer
+  end
+
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def add_item
+    @cart.add_item(@item.id)
   end
 end

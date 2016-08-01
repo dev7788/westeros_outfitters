@@ -1,23 +1,22 @@
 class SessionsController < ApplicationController
 
   def new
-    render :layout => false
   end
 
   def get_dashboard(user)
     if current_admin?
       redirect_to admin_dashboard_path
     else
-      redirect_to @user
+      redirect_to user
     end
   end
 
   def create
-    @user = User.find_by(username: params[:session][:username])
-    if @user && @user.authenticate(params[:session][:password])
-      session[:user_id] = @user.id
+    user = User.find_by(username: params[:session][:username])
+    if user && user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
       if @cart.items.count == 0
-        get_dashboard(@user)
+        get_dashboard(user)
       else
         redirect_to cart_path
       end

@@ -61,4 +61,18 @@ RSpec.describe Cart, type: :model do
     expect(cart.contents).to eq({ '2' => 1, '3' => 2 })
   end
 
+  it 'should be able to see item in cart' do
+    item = Item.create!(id: 100, name: 'Steel Throne', description: 'Hurt to sit on', price: 200.00, img: 'image_url3')
+    cart = Cart.new({ '100' => 3})
+
+    expect(cart.items).to eq([Item.find(100)])
+  end
+
+  it 'should be able to see the total for an item in cart' do
+    item = Item.create!(id: 100, name: 'Steel Throne', description: 'Hurt to sit on', price: 200.00, img: 'image_url3')
+    cart = Cart.new({ '100' => 3})
+
+    expect(cart.item_total(cart.items.last)).to eq(600)
+  end
+
 end

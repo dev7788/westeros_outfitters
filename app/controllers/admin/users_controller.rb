@@ -1,13 +1,11 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :current_user
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @user = User.find(current_user.id)
   end
 
   def edit
-    @user = User.find(params[:id])
-    if current_user == @user
+    if @user.id.to_s == params[:id]
       render :edit
     else
       render file: '/public/404'
@@ -15,16 +13,19 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to admin_dashboard_path
     else
-      flash[:error] = 'You need to fill out all fields'
-      render :edit
+      flash[:error] = 'Please Fill Out All Fields'
+      render request.referrer
+    end
   end
-end
 
   private
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
 
   def user_params
     params.require(:user).permit(:username, :password, :address, :email)
