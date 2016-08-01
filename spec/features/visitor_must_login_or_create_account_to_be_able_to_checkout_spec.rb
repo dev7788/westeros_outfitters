@@ -34,7 +34,7 @@ RSpec.feature 'visitor must login or create account to be able to checkout' do
     expect(page).to have_content ('$0.99')
     expect(page).to have_content ("it's cold")
     expect(page).to have_content ('Total: $0.99')
-    expect(page).to have_content ('Checkout')
+    expect(page).to have_button ('Checkout')
 
     click_on "Logout"
 
