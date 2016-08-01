@@ -3,10 +3,10 @@ class Item < ActiveRecord::Base
   has_many :order_items, dependent: :destroy
   has_many :orders, through: :order_items
 
-  validates :name, presence:true, uniqueness: true
-  validates :img, presence:true, uniqueness: true
-  validates :price, presence:true
-  validates :description, presence:true
+  validates :name, presence: true, uniqueness: true
+  validates :img, presence: true, uniqueness: true
+  validates :price, presence: true
+  validates :description, presence: true
 
   def quantity(order_id)
     find_order_items(order_id).quantity

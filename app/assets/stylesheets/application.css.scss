@@ -37,8 +37,71 @@ h2 {
   font-style: bold;
 }
 
+.animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
 
+@-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 
+  15%, 45%, 75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  30%, 60%, 90% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  15%, 45%, 75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  30%, 60%, 90% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+.shake a {
+  color: #6ba0fb;
+  text-decoration: underline;
+}
+
+.strong {
+  max-width: 50%;
+  font-weight: 550;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+.pushdown {
+  margin-top: 75px;
+}
+
+.login {
+  padding: 0 25px 25px 25px;
+}
 
 ul.rig {
 	list-style: none;

@@ -1,23 +1,29 @@
 class OrdersController < ApplicationController
   before_action :current_user
+  before_action :set_orders, only: [:index, :show, :create]
 
   def index
-    @orders = current_user.orders
   end
 
   def show
-    if current_user.orders.find_by(id: params[:id]).nil?
+    if @orders.find_by(id: params[:id]).nil?
       render file: '/public/404'
     else
-      @order = current_user.orders.find(params[:id])
+      @order = @orders.find(params[:id])
       render :show
     end
   end
 
   def create
-    @order = current_user.orders.create(amount: @cart.total, status: 0)
+    @order = @orders.create(amount: @cart.total, status: 0)
     @order.add_order_items(@cart)
     redirect_to @order
     session[:cart] = {}
+  end
+
+  private
+
+  def set_orders
+    @orders = current_user.orders
   end
 end

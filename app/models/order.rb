@@ -7,10 +7,10 @@ class Order < ActiveRecord::Base
   validates :user_id, presence: true
   validates :status, presence: true
 
-  enum status: %w(Ordered Paid Cancelled Completed)#, default: 0
+  enum status: %w(Ordered Paid Cancelled Completed)
 
   def add_order_items(cart)
-    cart.contents.each do |item_id, qty, item_total|
+    cart.contents.each do |item_id, qty|
       item = Item.find(item_id)
       self.order_items.create(item_id: item_id, quantity: qty, subtotal: item.price * qty)
     end
