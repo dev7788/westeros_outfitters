@@ -9,7 +9,6 @@
     <strong><a class="navbar-brand logo" href="/">WESTEROS OUTFITTERS</a></strong>
   </div>
 
-
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -19,11 +18,11 @@
         <a href="/cart">View Cart (<%= @cart.count_of(@cart.contents) %> Items)</a>
       </li>
       <li>
-        <%if current_user.nil? %>
-        <%=link_to "Create An Account", new_user_path %>
-        <%else %>
-        <a href="/dashboard">Logged in as '<%=current_user.username%>'</a>
-        <%end %>
+        <% if current_user.nil? %>
+        <%= link_to "Create An Account", new_user_path %>
+        <% else %>
+        <a href="/dashboard">Logged in as '<%= current_user.username %>'</a>
+        <% end %>
       </li>
       <li>
         <% if current_user.nil? %>
