@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'Account Successfully Created!'
       session[:user_id] = @user.id
       if @cart.items.count == 0
-        redirect_to @user
+        redirect_to user_path
       else
         redirect_to cart_path
       end

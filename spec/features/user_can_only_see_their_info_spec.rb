@@ -18,7 +18,7 @@ RSpec.feature 'Authenticated User Can only see their data' do
 
     click_button "Login"
 
-    visit user_path(user2)
+    visit user_path
 
     expect(page).to have_content("Hello, user2.")
     expect(current_path).to eq ("/dashboard")

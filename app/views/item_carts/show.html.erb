@@ -22,7 +22,7 @@
           <br></br>
           Item Total: <%= number_to_currency(@cart.item_total(item)) %>
           <br></br>
-          <%= button_to "Remove", cart_path(item), method: :delete %>
+          <%= button_to "Remove", cart_path(id: item.id), method: :delete %>
           <br></br>
         <% end %>
         <h3>Total: <%= number_to_currency(@cart.total) %></h3>

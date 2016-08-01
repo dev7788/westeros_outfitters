@@ -10,7 +10,4 @@ class User < ActiveRecord::Base
   validates :role,     presence: true
 
   enum role: %w(default admin)
-
-  def to_param
-  end
 end
