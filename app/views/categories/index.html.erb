@@ -1,5 +1,0 @@
-<p>
-  <%@categories.each do |category| %>
-    <p><%= button_to "View #{category.name.capitalize}", category_path(category), method: :get, class: "button btn" %></p>
-  <%end %>
-</p>

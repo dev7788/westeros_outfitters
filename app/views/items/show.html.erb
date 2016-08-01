@@ -1,10 +1,19 @@
 <div class="categories-nav">
-<h3><%= @item.name %></h3><br>
-<img src='<%= @item.img %>' style="max-height: 450px; max-width: 600px;" /><br>
-<%= number_to_currency(@item.price) %><br>
-<p>
-  <%= @item.description %>
-</p>
-
-<p><%= button_to "Add to Cart", cart_path(id: @item.id), class: "button btn" unless @item.retired%><p>
+  <div class="thumbnail">
+    <strong><a href="/items">Back to All Items</a></strong>
+  </div>
+</div>
+<div class="categories-nav">
+  <h3><%= @item.name %></h3>
+  <br>
+  <img src='<%= @item.img %>' style="max-height: 450px; max-width: 600px;"/>
+  <br>
+  <div>
+    <ul class="row transparent">
+      <%= number_to_currency(@item.price) %>
+      <br>
+      <p><%= @item.description %></p>
+    </ul>
+  </div>
+  <p><%= button_to "Add to Cart", cart_path(id: @item.id), class: "button btn" unless @item.retired%><p>
 </div>

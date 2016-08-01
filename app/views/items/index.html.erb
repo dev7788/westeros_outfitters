@@ -1,29 +1,29 @@
 <h2>All Items</h2>
-<div class ="categories-nav">
-<div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail text-center">
-<%@categories.each do |category| %>
-<strong><a href="/<%=category.name%>"><%= category.name.capitalize%>   |</a></strong>
-<%end %>
+<div class ="categories-nav row">
+  <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail text-center">
+    <% @categories.each do |category| %>
+      <strong><a href="/<%= category.name %>"><%= category.name.capitalize %> |</a></strong>
+    <% end %>
+  </div>
 </div>
-</div>
-<br></br>
-<br></br>
 <br></br>
 <p>
-<%@items.each do |item| %>
-  <div class="caption bottom-align">
-    <ul class="rig columns-3">
-      <li>
-        <img class ="index-image" src="<%=item.img%>" alt="...">
-        <h3><strong><%= link_to item.name, item_path(item) %></strong></h3>
-        <br></br>
-        <%= number_to_currency(item.price) %>
-        <br></br>
-        <%= item.description%>
-        <h4><strong><%=link_to "Item Retired",item_path(item.id) if item.retired%></strong></h4>
-        <p><%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn" unless item.retired%></p>
-      </li>
+  <div>
+    <ul class="row transparent">
+      <% @items.each do |item| %>
+        <li class="item col-md-3 col-xs-6">
+          <img class="index-image" src="<%= item.img %>" alt="...">
+          <h4><strong><%= link_to item.name, item_path(item) %></strong></h4>
+          <br>
+          <%= number_to_currency(item.price) %>
+          <br></br>
+          <div class="item-description">
+            <p><%= item.description %></p>
+          </div>
+          <h4><%= link_to "Item Retired", item_path(item), class: "bottom-right" if item.retired %></h4>
+          <%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn bottom-right" unless item.retired %>
+        </li>
+      <% end %>
     </ul>
   </div>
-<% end %>
 </p>
