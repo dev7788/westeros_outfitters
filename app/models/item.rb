@@ -12,8 +12,8 @@ class Item < ActiveRecord::Base
     find_order_items(order_id).quantity
   end
 
-  def subtotal(order_id)
-    find_order_items(order_id).subtotal
+  def sub_total(order_id)
+    find_order_items(order_id).sub_total
   end
 
   def find_order_items(order_id)

@@ -12,7 +12,7 @@ class Order < ActiveRecord::Base
   def add_order_items(cart)
     cart.contents.each do |item_id, qty|
       item = Item.find(item_id)
-      self.order_items.create(item_id: item_id, quantity: qty, subtotal: item.price * qty)
+      self.order_items.create(item_id: item_id, quantity: qty, sub_total: item.price * qty)
     end
   end
 end
