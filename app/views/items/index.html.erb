@@ -15,7 +15,7 @@
     <ul class="rig columns-3">
       <li>
         <img class ="index-image" src="<%=item.img%>" alt="...">
-        <strong><%= item.name%></strong>
+        <h3><strong><%= link_to item.name, item_path(item) %></strong></h3>
         <br></br>
         <%= number_to_currency(item.price) %>
         <br></br>
