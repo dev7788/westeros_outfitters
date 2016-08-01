@@ -22,7 +22,8 @@ class ItemCartsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:format])
+    # binding.pry
+    @item = Item.find(params[:id])
     @cart.remove_item(@item.id)
     flash[:item_removed] = "Successfully removed " \
                            "#{view_context.link_to @item.name, item_path(@item)}" \

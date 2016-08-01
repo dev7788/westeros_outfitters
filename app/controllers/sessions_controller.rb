@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if current_admin?
       redirect_to admin_dashboard_path
     else
-      redirect_to user
+      redirect_to user_path
     end
   end
 
