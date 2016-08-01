@@ -1,6 +1,7 @@
-<div class="col m6 offset-m3 s12 card z-depth-3 pushdown">
+<div class="categories-nav">
+  <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail">
   <div class="login">
-    <h2>Login</h2>
+    <h3>Login</h3>
 
     <%= form_for :session, url: login_path do |f| %>
       <div class="control-group">
@@ -15,6 +16,7 @@
           <%= f.password_field :password, :class => 'text_field' %>
         </div>
       </div>
+      <br>
       <div class="form-actions">
         <%= f.submit 'Login', :class => 'btn btn-primary' %>
       </div>
@@ -23,4 +25,5 @@
     Not Registered?
     <%= link_to("Create an Account", new_user_path) %>
   </div>
+</div>
 </div>
