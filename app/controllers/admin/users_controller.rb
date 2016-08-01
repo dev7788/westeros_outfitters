@@ -5,12 +5,11 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def edit
-    require_admin
-    # if current_user == @user
-    #   render :edit
-    # else
-    #   render file: '/public/404'
-    # end
+    if @user.id.to_s == params[:id]
+      render :edit
+    else
+      render file: '/public/404'
+    end
   end
 
   def update
@@ -25,7 +24,7 @@ class Admin::UsersController < Admin::BaseController
   private
 
   def set_user
-    @user = User.find(session[:user_id])
+    @user = User.find(current_user.id)
   end
 
   def user_params
