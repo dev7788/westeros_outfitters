@@ -5,6 +5,9 @@
 </div>
 <div class="categories-nav">
   <h3><%= @item.name %></h3>
+  <% if current_admin? %>
+    <strong><%= link_to "Edit This Item", edit_admin_item_path(@item) %></strong>
+  <% end %>
   <br>
   <img src='<%= @item.img %>' style="max-height: 450px; max-width: 600px;"/>
   <br>
