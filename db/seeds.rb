@@ -15,7 +15,7 @@ user = User.create(username:"Nicole", password:"test", address:"2122 Concord Lan
 admin = User.create(username:"Admin", password:"test", address:"admin street Denver CO 80027",email:"admin.com",role:1)
 
 weapons.items.create(name: "Ice", img: "http://www.bigbadtoystore.com/images/products/out/large/VLS10000.jpg", price: 100.00, description: "Ice was a Valyrian steel greatsword and an heirloom of House Stark. Ice had been in the possession of House Stark for generations and was kept in a special scabbard made from the pelt of a wolf.")
-weapons.items.create(name: "Oathkeeper", img: "http://www.valyriansteel.com/shop/images/uploads/Damasc%20Oathkeeper%206.jpg ", price: 100.00, description: "Oathkeeper is one of two Valyrian steel longswords made from Ice, the greatsword of House Stark, under orders of Lord Tywin Lannister.")
+weapons.items.create(name: "Oathkeeper", img: "http://www.entertainmentearth.com/images/AUTOIMAGES/UC889711lg.jpg", price: 100.00, description: "Oathkeeper is one of two Valyrian steel longswords made from Ice, the greatsword of House Stark, under orders of Lord Tywin Lannister.")
 weapons.items.create(name: "Longclaw", img: "http://www.valyriansteel.com/shop/images/uploads/Longclaw%202.jpg", price: 350.00, description: "Longclaw is a Valyrian steel sword that remained in the possession of House Mormont for five centuries.")
 
 weapons.items.create(name: "Needle", img: "http://www.valyriansteel.com/shop/images/uploads/VS0114%20Sword%203.jpg", price: 49.99, description: "Needle is a thin sword wielded by Arya Stark. It was given to her by Jon Snow, who had it made by Mikken, the blacksmith of Winterfell.")
