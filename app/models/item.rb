@@ -4,8 +4,8 @@ class Item < ActiveRecord::Base
   has_many :orders, through: :order_items
 
   validates :name, presence: true, uniqueness: true
-  validates :img, presence: true, uniqueness: true
-  validates :price, presence: true
+  validates :img, presence: true
+  validates :price, presence: true, :numericality => {:greater_than => 0}
   validates :description, presence: true
 
   def quantity(order_id)
