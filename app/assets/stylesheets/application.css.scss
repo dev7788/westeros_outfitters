@@ -141,8 +141,8 @@ h2 {
   display: block;
   max-width: 230px;
   max-height: 150px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   float: center;
 }
 
@@ -214,4 +214,14 @@ h2 {
 
   .home-nav{
     opacity: 0.9;
+  }
+
+  .show-image{
+    display:block;
+    width: auto;
+    height: 100%;
+    width:100%;
+    float: center;
+    max-height: 400px;
+    max-width: 500px;
   }
