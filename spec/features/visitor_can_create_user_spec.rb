@@ -13,4 +13,14 @@ RSpec.feature 'Visitor can create a user' do
     expect(page).to have_content('Hello, matt.')
     expect(page).to have_content('Account Successfully Created!')
   end
+
+  scenario "they can't create an account with missing info" do
+    visit new_user_path
+
+    fill_in 'Username', with: 'nope'
+    click_button 'Submit'
+
+    expect(current_path).to eq(new_user_path)
+    expect(page).to have_content('Those Are Not Valid Inputs. Please Try Again.')
+  end
 end
