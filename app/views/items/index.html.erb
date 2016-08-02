@@ -12,7 +12,7 @@
     <div>
       <ul class="row transparent">
        <% @items.each do |item| %>
-         <li class="item col-md-3 col-xs-6">
+         <li id="<%= item.name %>" class="item col-md-3 col-xs-6">
            <img class="index-image" src="<%= item.img %>" alt="...">
            <h4><strong><%= link_to item.name, item_path(item) %></strong></h4>
          <br>
