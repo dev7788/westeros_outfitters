@@ -2,16 +2,6 @@ class OrdersController < ApplicationController
   before_action :current_user
   before_action :set_orders, only: [:index, :show, :create]
 
-  protect_from_forgery except: [:hook]
-  def hook
-    params.permit! # Permit all Paypal input params
-    status = params[:payment_status]
-    if status == "Completed"
-      @order = Order.find(params[:invoice])
-      @order.update_attributes(notification_params: params, status: status, transaction_id: params[:txn_id], purchased_at: Time.now)
-    end
-    render nothing: true
-  end
 
   def index
   end
@@ -29,7 +19,7 @@ class OrdersController < ApplicationController
     @order = @orders.new(amount: @cart.total, status: 0)
     if @order.save
       @order.add_order_items(@cart)
-      redirect_to @order.paypal_url(order_path(@order))
+      redirect_to @order
       session[:cart] = {}
     else
       render :new
