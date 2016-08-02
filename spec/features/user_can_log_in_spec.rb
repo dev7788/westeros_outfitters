@@ -14,7 +14,7 @@ RSpec.feature 'User can log in' do
     expect(page).to have_content('Hello, garrett.')
   end
 
-  scenario "they cannot log in without proper credentials" do
+  scenario 'they cannot log in without proper credentials' do
     User.create!(username: 'garrett', password: 'test', address: 'user street', email: 'user.com', role: 0)
 
     visit login_path
