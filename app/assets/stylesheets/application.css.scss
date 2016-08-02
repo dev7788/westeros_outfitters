@@ -34,8 +34,7 @@ body {
 
 h2 {
   color: #ffffff;
-  font-family: Gothic 725 Black;
-  font-style: bold;
+  font-family: Papyrus, fantasy;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   font-style: bold;
 }
@@ -118,6 +117,7 @@ h2 {
 	vertical-align: top;
 	box-shadow: 0 0 5px #ddd;
 	box-sizing: border-box;
+  height: 420px;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
@@ -125,13 +125,6 @@ h2 {
 .transparent {
   opacity: 0.9;
 }
-
-.item img {
-	max-width: 100%;
-	height: auto;
-	margin: 0 0 10px;
-}
-
 
 .item h3 {
 	margin: 0 0 5px;
@@ -142,10 +135,6 @@ h2 {
 	font-size: .9em;
 	line-height: 1.5em;
 	color: #999;
-}
-
-li.item{
-  height: 420px;
 }
 
 .index-image {
@@ -182,8 +171,47 @@ li.item{
   max-height: 30px;
 }
 
-.bottom-right {
-  bottom: 5px;
-  position: absolute;
-  right: 5px;
-}
+  .home-div{
+    padding-left:15px;
+    margin-top: 50px;
+  }
+
+  p.home{
+    padding-left:10px;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+  	font-size: 18px;
+  	font-style: normal;
+  	font-variant: normal;
+  	font-weight: 400;
+  	line-height: 40px;
+  }
+
+  .home-picture{
+    padding-top: 20px;
+    width: 300px;
+    height: 300px;
+  }
+
+ h1.home{
+   padding-left:10px;
+   font-family: Papyrus, fantasy;
+  	font-size: 24px;
+  	font-style: normal;
+  	font-variant: normal;
+  	font-weight: 900;
+  	line-height: 26.4px;
+  }
+
+  .left-thumbnail {
+      padding-left: 70px;
+      padding-top: 30px;
+  }
+
+  .col-centered{
+    float: none;
+    margin: 0 auto;
+    }
+
+  .home-nav{
+    opacity: 0.9;
+  }
