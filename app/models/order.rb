@@ -29,7 +29,7 @@ class Order < ActiveRecord::Base
           quantity: '1',
           notify_url: "#{Rails.application.secrets.app_host}/hook"
       }
-      
+      binding.pry
       "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
     end
 end
