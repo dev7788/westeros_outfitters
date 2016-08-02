@@ -24,4 +24,7 @@ Rails.application.routes.draw do
       resources :users, only: [:edit, :update]
       resources :items, only: [:new, :create, :edit, :update]
   end
+
+  post "/orders/:id" => "orders#show"
+  post "/hook" => "orders#hook"
 end
