@@ -1,0 +1,35 @@
+<%= form_for [:admin, @item] do |f| %>
+  <div class="control-group">
+    <%= f.label :category_id, 'Category', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :category_id, Category.all, :id, :name, {}, :class => 'collection_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :price, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :img, 'Image', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :img, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
