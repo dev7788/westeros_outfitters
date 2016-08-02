@@ -16,7 +16,6 @@ RSpec.describe Item, type: :model do
   it { should validate_presence_of(:description) }
 
   it { should validate_uniqueness_of(:name) }
-  it { should validate_uniqueness_of(:img) }
 
   it 'should have all attributes' do
     item = Item.new(name: 'Hand of the King Pin', img: 'www.fake.com', price: 100, description: 'The hand wears this pin')
