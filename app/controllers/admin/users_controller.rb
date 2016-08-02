@@ -17,7 +17,7 @@ class Admin::UsersController < Admin::BaseController
       redirect_to admin_dashboard_path
     else
       flash[:error] = 'Please Fill Out All Fields'
-      render request.referrer
+      render :edit
     end
   end
 

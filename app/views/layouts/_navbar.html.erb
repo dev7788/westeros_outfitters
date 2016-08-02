@@ -12,25 +12,34 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <a href="/items">Items</a>
+        <a href="/items">View All Items</a>
+      </li>
+      <li>
+        <% if current_admin? %>
+          <%= link_to "Add an Item", new_admin_item_path %>
+        <% end %>
       </li>
       <li>
         <a href="/cart">View Cart (<%= @cart.count_of(@cart.contents) %> Items)</a>
       </li>
       <li>
         <% if current_user.nil? %>
-        <%= link_to "Create An Account", new_user_path %>
+          <%= link_to "Create An Account", new_user_path %>
         <% else %>
-        <a href="/dashboard">Logged in as '<%= current_user.username %>'</a>
+          <% if current_admin? %>
+            <%= link_to "Logged in as '#{current_user.username}'", admin_dashboard_path %>
+          <% else %>
+            <%= link_to "Logged in as '#{current_user.username}'", user_path %>
+          <% end %>
         <% end %>
       </li>
       <li>
         <% if current_user.nil? %>
-        <%= link_to "Login", login_path %>
+          <%= link_to "Login", login_path %>
         <% else %>
-        <%= link_to "Logout", logout_path, method: :delete %>
+          <%= link_to "Logout", logout_path, method: :delete %>
         <% end %>
-    </li>
+      </li>
     </ul>
   </div>
 </nav>

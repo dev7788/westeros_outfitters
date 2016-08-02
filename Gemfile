@@ -50,6 +50,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-pride'
+  gem 'ngrok'
 end
 
 group :development do
