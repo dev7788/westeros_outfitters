@@ -20,6 +20,7 @@ RSpec.feature 'Authenticated User Can only see their data' do
 
     visit user_path(user2)
 
+    expect(page).to have_content()
     expect(page).to have_content("Hello, user2.")
     expect(current_path).to eq ("/dashboard")
 
@@ -34,7 +35,10 @@ RSpec.feature 'Authenticated User Can only see their data' do
 
     click_on "Logout"
 
-    click_button "Login"
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('Goodbye!')
+
+    click_on "Login"
 
     fill_in "Username", with: "user"
     fill_in "Password", with: "test"

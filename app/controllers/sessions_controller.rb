@@ -22,13 +22,13 @@ class SessionsController < ApplicationController
       end
     else
       flash.now[:error] = "Wrong Username or Password"
-      render :new
+      redirect_to login_path
     end
   end
 
   def destroy
     session.clear
     flash[:notice] = "Goodbye!"
-    redirect_to login_path
+    redirect_to root_path
   end
 end

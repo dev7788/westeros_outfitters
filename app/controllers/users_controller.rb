@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       end
     else
       flash[:error] = 'Those Are Not Valid Inputs. Please Try Again.'
-      render :new
+      redirect_to new_user_path
     end
   end
 
