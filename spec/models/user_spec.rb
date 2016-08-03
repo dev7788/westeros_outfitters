@@ -18,10 +18,10 @@ RSpec.describe User, type: :model do
   it { should validate_uniqueness_of(:username) }
   it { should validate_uniqueness_of(:email) }
 
-  scenario "user is valid only with all attributes" do
-    user = User.new(username: "clay", password: "admin")
-    user_1 = User.new(username: "aaron", password: "admin", email: "packers@example.com")
-    user_2 = User.new(username: "aaron", password: "admin", email: "packers@example.com", address: "123123")
+  scenario 'user is valid only with all attributes' do
+    user = User.new(username: 'clay', password: 'admin')
+    user_1 = User.new(username: 'aaron', password: 'admin', email: 'packers@example.com')
+    user_2 = User.new(username: 'aaron', password: 'admin', email: 'packers@example.com', address: '123123')
 
     expect(user.save).to eq false
     expect(user_1.save).to eq false
