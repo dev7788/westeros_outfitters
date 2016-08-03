@@ -1,12 +1,13 @@
 class UserNotifier < ActionMailer::Base
-  default from: 'westerosoutfitters@gmail.com'
+  default from: 'do-not-reply@westerosoutfitters.herokuapp.com'
 
   def send_signup_email(user)
     @user = user
-    mail(to: @user.email, subject: 'Thanks for signing up with Westeros Outfitters!')
+    @url  = "http://westerosoutfitters.herokuapp.com/login"
+    mail(to: @user.email, subject: "Welcome to Westeros Outfitters!")
   end
 
-  def order_confirmation(user, order)
+  def send_order_confirmation(user, order)
     @user = user
     @order = order
     mail(to: @user.email, subject: 'Westeros Outfitters has received your order!')

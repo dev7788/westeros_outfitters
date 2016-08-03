@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
       end
     else
       flash.now[:error] = "Wrong Username or Password"
-      redirect_to login_path
+      render :new
     end
   end
 

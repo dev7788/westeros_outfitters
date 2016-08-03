@@ -12,6 +12,7 @@ class Cart
 
   def subtract_item(item)
     contents[item.to_s] -= 1 if contents[item.to_s] > 0
+    remove_item(item) if contents[item.to_s] == 0
   end
 
   def items
