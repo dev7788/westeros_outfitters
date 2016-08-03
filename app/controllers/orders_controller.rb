@@ -16,15 +16,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = @orders.new(amount: @cart.total, status: 0)
-    if @order.save
+    @order = @orders.create(amount: @cart.total, status: 0)
       @order.add_order_items(@cart)
       UserNotifier.send_order_confirmation(@order, current_user).deliver_now
       redirect_to @order
       session[:cart] = {}
-    else
-      render :new
-    end
   end
 
   private
