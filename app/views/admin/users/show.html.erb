@@ -3,9 +3,9 @@
   <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail">
     <h3>Hello, <%= @user.username %>.</h3>
     <br>
-    E-mail: <p><%= @user.email %></p>
-    Address: <p><%= @user.address %></p>
-
-    <%= link_to "Edit User Profile", edit_admin_user_path(id: @user.id) %>
+    <strong>E-mail:</strong> <p><%= @user.email %></p>
+    <strong>Address:</strong> <p><%= @user.address %></p>
+    <br>
+    <strong><%= link_to "Edit User Profile", edit_admin_user_path(id: @user.id) %></strong>
   </div>
 </div>
