@@ -11,7 +11,7 @@ RSpec.feature 'User can place an order' do
     cart = Cart.new({ '15' => 1, '16' => 2 })
 
     visit cart_path
-    require "pry"; binding.pry
+
     click_on "Checkout"
   end
 end

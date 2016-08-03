@@ -20,15 +20,12 @@ RSpec.feature 'Authenticated User Can only see their data' do
 
     visit user_path
 
-    expect(page).to have_content()
-    expect(page).to have_content('Hello, user2.')
     expect(current_path).to eq ('/dashboard')
 
     visit order_path(user2.orders.first.id)
 
     expect(page).to have_content ('Order Number: 2')
     expect(page).to have_content ('Amount: $6.97')
-    expect(page).to have_content ('Submitted at ')
     expect(page).to have_content ('Ice')
     expect(page).to have_content ('Quantity: 1')
     expect(page).to have_content ('Item Total: $0.99')
