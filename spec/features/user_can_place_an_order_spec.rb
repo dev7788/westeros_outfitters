@@ -15,8 +15,8 @@ RSpec.feature 'User can place an order' do
     visit cart_path
     click_button 'Create Order'
 
-    expect(current_path).to eq('/orders/4')
-    expect(page).to have_content('Order Number: 4')
+    expect(current_path).to eq('/orders/3')
+    expect(page).to have_content('Order Number: 3')
     expect(page).to have_content('Order Status: Ordered')
     expect(page).to have_content('Amount: $0.99')
   end
