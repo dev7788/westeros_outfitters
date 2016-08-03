@@ -28,6 +28,6 @@ RSpec.feature 'User who is an admin can see admin dashboard' do
     visit admin_dashboard_path
 
     expect(page).to have_content('404')
-    expect(page).to have_content('Sorry Gendry. Maybe next season.')
+    expect(page).to have_content('Sorry, Gendry. Maybe next season.')
   end
 end
