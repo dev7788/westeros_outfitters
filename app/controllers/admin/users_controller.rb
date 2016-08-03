@@ -8,7 +8,7 @@ class Admin::UsersController < Admin::BaseController
     if @user.id.to_s == params[:id]
       render :edit
     else
-      render file: '/public/404'
+      render file: "app/views/errors/not_found.html.erb"
     end
   end
 

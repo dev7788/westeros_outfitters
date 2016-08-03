@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def show
     if @orders.find_by(id: params[:id]).nil?
-      render file: '/public/404'
+      render file: "app/views/errors/not_found.html.erb"
     else
       @order = @orders.find(params[:id])
       render :show

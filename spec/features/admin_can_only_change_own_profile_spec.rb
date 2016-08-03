@@ -14,6 +14,7 @@ RSpec.feature 'admin goes to dashboard' do
     click_link 'Edit User Profile'
     expect(current_path).to eq('/admin/users/2/edit')
     visit '/admin/users/1/edit'
-    expect(page).to have_content("The page you were looking for doesn't exist")
+    expect(page).to have_content("404")
+    expect(page).to have_content("Sorry Gendry. Maybe next season.")
   end
 end

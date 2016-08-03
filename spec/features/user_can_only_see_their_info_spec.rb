@@ -50,7 +50,8 @@ RSpec.feature 'Authenticated User Can only see their data' do
 
     visit "/orders/1"
 
-    expect(page).to have_content("The page you were looking for doesn't exist")
+    expect(page).to have_content("404")
+    expect(page).to have_content("Sorry Gendry. Maybe next season.")
   end
 
   scenario "user gets an error when visiting admin page" do
@@ -59,6 +60,7 @@ RSpec.feature 'Authenticated User Can only see their data' do
     visit admin_dashboard_path
 
     expect(current_path).to eq ("/admin/dashboard")
-    expect(page).to have_content("The page you were looking for doesn't exist")
+    expect(page).to have_content("404")
+    expect(page).to have_content("Sorry Gendry. Maybe next season.")
   end
 end
