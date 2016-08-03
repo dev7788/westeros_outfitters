@@ -295,7 +295,7 @@ h2 {
 }
 
 .item-description {
-  max-height: 30px;
+  max-height: 20px;
   font-size: 14px;
   font-color: black;
 }
@@ -326,6 +326,7 @@ h2 {
   }
 
   .home-picture{
+    opacity: 0.9;
     padding-top: 30px;
     width: 350px;
     height: 400px;
