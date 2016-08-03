@@ -360,11 +360,14 @@ h2 {
   .show-image {
     display:block;
     width: auto;
-    height: 100%;
-    width:100%;
     float: center;
-    max-height: 400px;
-    max-width: 500px;
+    max-height: 200px;
+    max-width: 300px;
+    margin-left: 80px;
+  }
+
+  .show-button{
+    margin-bottom: 10px
   }
 
   #stripe_payment {
