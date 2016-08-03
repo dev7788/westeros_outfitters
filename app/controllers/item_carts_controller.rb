@@ -18,11 +18,14 @@ class ItemCartsController < ApplicationController
 
   def decrement
     @cart.subtract_item(@item.id)
-    destroy if @cart.quantity(@item) == 0
+    if @cart.quantity(@item) == 0
+      destroy
+    else
+      redirect_to request.referrer
+    end
   end
 
   def destroy
-    # binding.pry
     @item = Item.find(params[:id])
     @cart.remove_item(@item.id)
     flash[:item_removed] = "Successfully removed " \
