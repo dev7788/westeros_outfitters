@@ -15,6 +15,6 @@ RSpec.feature 'admin goes to dashboard' do
     expect(current_path).to eq('/admin/users/2/edit')
     visit '/admin/users/1/edit'
     expect(page).to have_content("404")
-    expect(page).to have_content("Sorry Gendry. Maybe next season.")
+    expect(page).to have_content("Sorry, Gendry. Maybe next season.")
   end
 end
