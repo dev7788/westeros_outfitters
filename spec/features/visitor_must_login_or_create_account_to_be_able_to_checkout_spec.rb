@@ -10,7 +10,7 @@ RSpec.feature 'visitor must login or create account to be able to checkout' do
     click_on 'Add to Cart'
     click_on 'View Cart'
 
-    expect(page).to_not have_button('Checkout')
+    expect(page).to_not have_button('Create Order')
     expect(page).to have_content('Login or Create Account to Checkout')
     expect(page).to have_content ('Ice')
     expect(page).to have_css ('img[src="http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg"]')
@@ -30,12 +30,12 @@ RSpec.feature 'visitor must login or create account to be able to checkout' do
     expect(page).to have_css ('img[src="http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg"]')
     expect(page).to have_content ('$0.99')
     expect(page).to have_content ("it's cold")
-    expect(page).to have_button ('Checkout')
+    expect(page).to have_button ('Create Order')
 
     click_on 'Logout'
 
     expect(page).to have_content('Login')
-    expect(page).to_not have_button('Checkout')
+    expect(page).to_not have_button('Create Order')
   end
 
   scenario 'visitor logs in after putting items in cart' do
@@ -48,7 +48,7 @@ RSpec.feature 'visitor must login or create account to be able to checkout' do
     click_on 'Add to Cart'
     click_on 'View Cart'
 
-    expect(page).to_not have_button('Checkout')
+    expect(page).to_not have_button('Create Order')
     expect(page).to have_content('Login or Create Account to Checkout')
     expect(page).to have_content ('Toy')
     expect(page).to have_css ('img[src="http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg"]')
@@ -69,11 +69,11 @@ RSpec.feature 'visitor must login or create account to be able to checkout' do
     expect(page).to have_css ('img[src="http://www.valyriansteel.com/shop/images/uploads/ice-main.jpg"]')
     expect(page).to have_content ('$0.99')
     expect(page).to have_content ('cold')
-    expect(page).to have_button ('Checkout')
+    expect(page).to have_button ('Create Order')
 
     click_on 'Logout'
 
     expect(page).to have_content('Login')
-    expect(page).to_not have_button('Checkout')
+    expect(page).to_not have_button('Create Order')
   end
 end
