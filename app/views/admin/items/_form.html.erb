@@ -5,17 +5,20 @@
       <%= f.collection_select :category_id, Category.all, :id, :name, {}, :class => 'collection_select' %>
     </div>
   </div>
-  <p>
-    <div class="control-group">
-      <%= f.label :retired, 'Item Status', :class => 'control-label' %>
-      <div class="controls" id='retired-status'>
-        <%= f.label 'retired_false', 'Active' %>
-        <%= f.radio_button :retired, false, :class => 'radio_button' %>
-        <%= f.label 'retired_true', 'Retired' %>
-        <%= f.radio_button :retired, true, :class => 'radio_button' %>
+  <% if is_new %>
+  <% else %>
+    <p>
+      <div class="control-group">
+        <%= f.label :retired, 'Item Status', :class => 'control-label' %>
+        <div class="controls" id='retired-status'>
+          <%= f.label 'retired_false', 'Active' %>
+          <%= f.radio_button :retired, false, :class => 'radio_button' %>
+          <%= f.label 'retired_true', 'Retired' %>
+          <%= f.radio_button :retired, true, :class => 'radio_button' %>
+        </div>
       </div>
-    </div>
-  </p>
+    </p>
+  <% end %>
   <p>
     <div class="control-group">
       <%= f.label :name, :class => 'control-label' %>
