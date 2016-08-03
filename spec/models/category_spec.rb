@@ -9,19 +9,19 @@ RSpec.describe Category, type: :model do
 
   it { should validate_uniqueness_of(:name) }
 
-  scenario "category is valid only with all attributes" do
+  scenario 'category is valid only with all attributes' do
     category = Category.new()
-    category_1 = Category.new(name: "aaron")
-    category_2 = Category.new(name: "aaron")
+    category_1 = Category.new(name: 'aaron')
+    category_2 = Category.new(name: 'aaron')
 
     expect(category.save).to eq false
     expect(category_1.save).to eq true
     expect(category_2.save).to eq false
   end
 
-  scenario "category can clean name for url path" do
-    category_1 = Category.new(name: "aaron rodgers")
+  scenario 'category can clean name for url path' do
+    category_1 = Category.new(name: 'aaron rodgers')
 
-    expect(category_1.slug).to eq "aaron-rodgers"
+    expect(category_1.slug).to eq 'aaron-rodgers'
   end
 end

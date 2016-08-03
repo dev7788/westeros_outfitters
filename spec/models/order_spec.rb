@@ -12,7 +12,7 @@ RSpec.describe Order, type: :model do
   it { should validate_presence_of(:user_id) }
 
   it 'should save when it has all attributes' do
-    user = User.create(username: "aaron", password: "admin", email: "packers@example.com", address: "123123")
+    user = User.create(username: 'aaron', password: 'admin', email: 'packers@example.com', address: '123123')
     order = user.orders.create(amount: 188, user_id: 1)
     order1 = Order.new(amount: 182)
 

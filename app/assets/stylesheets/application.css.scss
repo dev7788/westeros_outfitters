@@ -14,8 +14,10 @@
 
  @import url(http://fonts.googleapis.com/css?family=Kite+One);
  @import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
- *, *:before, *:after{
+ *, *:before, *:after {
    margin: 0;
    padding: 0;
    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -24,31 +26,36 @@
    -webkit-transition: .15s ease-in;
    -moz-transition: .15s ease-in;
  }
- html, body{
+
+ html, body {
    min-height: 100%;
  }
- body{
+
+ body {
    background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_carbon.png);
    font-family: 'Bitter', serif;
  }
- h1{
+
+ h1 {
    color: #ccc;
    font-size: 2.5em;
    margin-bottom: .5em;
    text-align: center;
    text-shadow: 0.0625em 0.0625em 0.0625em #666;
  }
- p{
+
+ p {
    text-align: center;
    margin-bottom: 2em
  }
- p a{
+
+ p a {
    color: #666;
  }
 
  /*ribbon css */
 
- .ribbon{
+ .ribbon {
    margin: 3em;
    /* IE10 Consumer Preview */
    background-image: -ms-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
@@ -72,7 +79,7 @@
    float:left;
  }
 
- .ribbon i{
+ .ribbon i {
    width: 90%;
    height: 120%;
    display: block;
@@ -83,7 +90,7 @@
    border-left: dashed 0.0625em #333;
    overflow: hidden;
  }
- i span{
+ i span {
    color: #FFF;
    display: block;
    text-align: center;
@@ -95,7 +102,7 @@
    font-weight: bold;
  }
 
- s{
+ s {
    width: 0.625em;
    height: 0.625em;
    background: #333;
@@ -108,15 +115,15 @@
    opacity: .5;
  }
 
- s:nth-of-type(1){
+ s:nth-of-type(1) {
    margin-left: -1.25em;
    left: 0;
  }
- s:nth-of-type(2){
+ s:nth-of-type(2) {
    right: 0;
    margin-right: -1.25em;
  }
- .ribbon:before{
+ .ribbon:before {
    content: "";
    position: absolute;
    bottom: -2.4em;
@@ -126,7 +133,7 @@
  	border-top: 2.5em solid #990000;
  	border-right: 2.5em solid transparent;
  }
- .ribbon:after{
+ .ribbon:after {
    content: "";
    position: absolute;
    bottom: -2.4em;
@@ -137,10 +144,6 @@
  	border-left: 2.5em solid transparent;
  }
 
-
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
 .flash_item_removed {
   background: #32cd32 ;
 }
@@ -165,7 +168,6 @@ h2 {
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   font-style: bold;
 }
-
 
 .animated {
   -webkit-animation-duration: .5s;
@@ -283,13 +285,13 @@ h2 {
   padding: 10px;
 }
 
-.ribbon-div{
+.ribbon-div {
   margin-left: 10px;
   margin-right: 10px;
 }
 
 
-.ribbon-image{
+.ribbon-image {
   max-height: 100%;
   max-width: 200px;
 }
@@ -300,7 +302,7 @@ h2 {
   font-color: black;
 }
 
-.bottom-right{
+.bottom-right {
   position:absolute;
   right:5px;
   bottom: 5px;
@@ -309,12 +311,12 @@ h2 {
   max-height: 30px;
 }
 
-  .home-div{
+  .home-div {
     padding-left:15px;
     margin-top: 10px;
   }
 
-  p.home{
+  p.home {
     font-color: black;
     padding-left:10px;
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
@@ -325,13 +327,13 @@ h2 {
   	line-height: 40px;
   }
 
-  .home-picture{
+  .home-picture {
     padding-top: 30px;
     width: 350px;
     height: 400px;
   }
 
- h1.home{
+ h1.home {
    padding-left:10px;
    font-family: Papyrus, fantasy;
   	font-size: 30px;
@@ -346,16 +348,16 @@ h2 {
       padding-top: 20px;
   }
 
-  .col-centered{
+  .col-centered {
     float: none;
     margin: 0 auto;
     }
 
-  .home-nav{
+  .home-nav {
     opacity: 0.9;
   }
 
-  .show-image{
+  .show-image {
     display:block;
     width: auto;
     height: 100%;
@@ -365,11 +367,10 @@ h2 {
     max-width: 500px;
   }
 
-  #stripe_payment{
+  #stripe_payment {
     margin-top: 200px;
     padding: 20px;
   }
-
 
   .banner {
    font-size: 25px !important;
@@ -382,7 +383,6 @@ h2 {
    margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
   }
 
-
   .banner:before, .banner:after {
    content: "";
    position: absolute;
@@ -391,16 +391,19 @@ h2 {
    border: 1.5em solid 	#990000;
    z-index: -1;
   }
+
   .banner:before {
    left: -2em;
    border-right-width: 1.5em;
    border-left-color: transparent;
   }
+
   .banner:after {
    right: -2em;
    border-left-width: 1.5em;
    border-right-color: transparent;
   }
+
   .banner .banner-content:before, .banner .banner-content:after {
    content: "";
    position: absolute;
@@ -409,17 +412,20 @@ h2 {
    border-color: #333 transparent transparent transparent;
    bottom: -1em;
   }
+
   .banner .banner-content:before {
    left: 0;
    border-width: 1em 0 0 1em;
   }
+
   .banner .banner-content:after {
    right: 0;
    border-width: 1em 1em 0 0;
   }
 
-
-  .non-semantic-protector { position: relative; z-index: 1; }
+  .non-semantic-protector {
+    position: relative; z-index: 1;
+  }
 
   body.bg-404 {
     background: url("/assets/gendry404.jpg") no-repeat center center fixed;
