@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       resources :users, only: [:edit, :update]
       resources :items, only: [:new, :create, :edit, :update]
   end
-  resources :charges, only: [:new, :create]
+  resources :charges
 
   get "*any", via: :all, to: "errors#not_found"
 
