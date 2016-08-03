@@ -5,30 +5,41 @@
       <%= f.collection_select :category_id, Category.all, :id, :name, {}, :class => 'collection_select' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+  <p>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field', :placeholder => 'Name' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :price, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :price, :class => 'number_field' %>
+  </p>
+  <p>
+    <div class="control-group">
+      <%= f.label :price, :class => 'control-label' %>
+      <div class="controls">
+        $<%= f.number_field :price, min: 0, step: 0.01, :class => 'number_field', :placeholder => 'Price' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :description, :class => 'text_area' %>
+  </p>
+  <p>
+    <div class="control-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => 'text_area', :placeholder => 'Description' %>
+      </div>
     </div>
-  </div>
+  </p>
   <div class="control-group">
     <%= f.label :img, 'Image', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :img, :class => 'text_field' %>
+      <% if is_new %>
+        <%= f.text_field :img, :class => 'text_field', :value => 'http://thelivingroom.cafe/wp-content/uploads/2016/01/coming-soon-product-image.png' %>
+      <% else %>
+        <%= f.text_field :img, :class => 'text_field' %>
+      <% end %>
     </div>
   </div>
+  <br>
   <div class="form-actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>
