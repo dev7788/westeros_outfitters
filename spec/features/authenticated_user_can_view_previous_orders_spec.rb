@@ -24,7 +24,7 @@ RSpec.feature 'authenticated user can view previous orders' do
     expect(page).to have_content ('Quantity: 1')
     expect(page).to have_content ('Item Total: $0.99')
     expect(page).to have_content ('Ice2')
-    expect(page).to have_content ('Quantity: 2')
+    expect(page).to have_content ('Quantity: 1')
     expect(page).to have_content ('Item Total: $5.98')
     expect(page).to have_link ('Ice')
     expect(page).to have_link ('Ice2')

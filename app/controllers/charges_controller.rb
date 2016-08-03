@@ -3,6 +3,7 @@ class ChargesController < ApplicationController
   def new
     @amount = session[:order_amount]
     session[:order_amount] = nil
+    @amount = params['amount']
   end
 
   def create
@@ -24,8 +25,12 @@ class ChargesController < ApplicationController
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
+
     redirect_to new_charge_path
     @order.status = 1
     @order.save
+
+    redirect_to new_charge_path(amount: @amount)
+
   end
 end
