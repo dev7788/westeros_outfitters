@@ -13,12 +13,12 @@ RSpec.feature 'authenticated user can view previous orders' do
 
     visit orders_path
 
-    expect(page).to have_content ('Order Number: 1')
+    expect(page).to have_content ('Order Number: 2')
     expect(page).to have_content ('Order Total: $6.97')
     expect(page).to have_content ('Created At: ')
-    expect(page).to have_link ('Order Number: 1')
+    expect(page).to have_link ('Order Number: 2')
 
-    click_on ('Order Number: 1')
+    click_on ('Order Number: 2')
 
     expect(page).to have_content ('Ice')
     expect(page).to have_content ('Quantity: 1')
