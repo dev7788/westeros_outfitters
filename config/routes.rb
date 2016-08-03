@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   end
   resources :charges, only: [:new, :create]
 
+  get "*any", via: :all, to: "errors#not_found"
+
 end
