@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simplecov', :require => false, :group => :test
 gem 'bootstrap-sass'
 gem 'stripe'
-
+gem 'figaro'
 
 group :test do
   gem 'rspec-rails'
