@@ -18,7 +18,7 @@ class ItemCartsController < ApplicationController
 
   def decrement
     @cart.subtract_item(@item.id)
-    redirect_to request.referrer
+    destroy if @cart.quantity(@item) == 0
   end
 
   def destroy
