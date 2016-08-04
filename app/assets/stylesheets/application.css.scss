@@ -436,7 +436,7 @@ h1.home {
 }
 
 body.bg-404 {
-  background: url("/assets/gendry404.jpg") no-repeat center center fixed;
+  background: image-url('gendry404.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
