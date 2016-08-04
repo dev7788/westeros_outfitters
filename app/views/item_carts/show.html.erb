@@ -1,5 +1,5 @@
-<div class="categories-nav">
-  <div class="col-xs-offset-3 col-sm-offset-4 col-xs-6 col-md-4 text-center">
+<div class="categories-navi transparent">
+  <div class="col-xs-offset-3 col-sm-offset-4 col-xs-6 col-md-4 text-center transparent">
     <div class="thumbnail">
       <div class="caption bottom-align">
         <h1>Your Cart:</h1>
@@ -23,7 +23,7 @@
           <br></br>
           Item Total: <%= number_to_currency(@cart.item_total(item)) %>
           <br></br>
-          <%= button_to "Remove", cart_path(id: item.id), method: :delete %>
+          <%= button_to "Remove", cart_path(id: item.id), method: :delete, class: "button btn" %>
           <br></br>
           <hr>
         <% end %>
@@ -32,7 +32,7 @@
     </div>
     <div class="thumbnail">
       <% if current_user %>
-        <strong><%= button_to "Create Order", orders_path, method: :post unless @items.count == 0 %></strong>
+        <strong><%= button_to "Create Order", orders_path, method: :post, class: "button btn" unless @items.count == 0 %></strong>
         <br></br>
         <strong><%= link_to "Past Orders", orders_path %></strong>
       <% else %>
