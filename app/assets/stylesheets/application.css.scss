@@ -33,8 +33,13 @@ html, body {
 
 body {
   background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_carbon.png);
-  font-family: 'Bitter', serif;
 }
+.cart-h2{
+  color:black;
+  font-family: Papyrus, fantasy;
+
+}
+
 
 h1 {
   color: #ccc;
@@ -162,12 +167,7 @@ body {
   background-size: cover;
 }
 
-h2 {
-  color: #ffffff;
-  font-family: Papyrus, fantasy;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  font-style: bold;
-}
+
 
 .animated {
   -webkit-animation-duration: .5s;
