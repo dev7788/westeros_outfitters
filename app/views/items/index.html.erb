@@ -24,7 +24,7 @@
         <div class="item-description">
           <p><%= item.description %></p>
         </div>
-        <%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn-success bottom-right" unless item.retired %>
+        <%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn bottom-right" unless item.retired %>
       </li>
     <% end %>
   </ul>
