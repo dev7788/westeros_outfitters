@@ -1,5 +1,5 @@
-<div class="categories-nav">
-  <div class="col-xs-offset-3 col-sm-offset-3 col-xs-6 thumbnail text-center">
+<div class="categories-nav transparent">
+  <div class="col-xs-offset-3 col-sm-offset-3 col-xs-6 thumbnail text-center transparent">
     <% @orders.each do |order| %>
       <h3><%= link_to "Order Number: #{order.id}", order_path(order) %></h3>
       <hr><br>
