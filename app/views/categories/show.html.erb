@@ -21,7 +21,7 @@
         </div>
         <br>
         <h4><%= link_to "Item Retired", item_path(item), class: "bottom-right" if item.retired %></h4>
-        <%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn bottom-right" unless item.retired %>
+        <%= button_to "Add to Cart", cart_path(id: item.id), class: "btn btn-success bottom-right" unless item.retired %>
       </li>
     <% end %>
   </ul>
