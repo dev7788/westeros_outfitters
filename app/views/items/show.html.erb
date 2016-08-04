@@ -14,15 +14,16 @@
       <% end %>
         <br>
         <div class="col-centered text-center transparent">
-        <p><img src='<%= @item.img %>' class="show-image center-block"/>
-        <strong><%= number_to_currency(@item.price) %></strong>
-        <br></br>
-        <%= @item.description %>
-        <%= button_to "Add to Cart", cart_path(id: @item.id), class: "btn btn-success" unless @item.retired%>
-      </p>
-      <br>
-    </div>
+          <p>
+            <img src='<%= @item.img %>' class="show-image center-block"/><br>
+            <strong><%= number_to_currency(@item.price) %></strong>
+            <br></br>
+            <%= @item.description %>
+            <%= button_to "Add to Cart", cart_path(id: @item.id), class: "btn btn-success" unless @item.retired%>
+          </p>
+          <br>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </div>
